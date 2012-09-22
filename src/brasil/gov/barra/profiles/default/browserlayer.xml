@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+ <layer
+     name="brasil.gov.barra"
+     interface="brasil.gov.barra.interfaces.IBarraInstalada"
+     />
+</layers>

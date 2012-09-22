@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <!-- Registra o adapter que implementara o schema do painel de
+       controle para a raiz do Plone site
+   -->
+  <adapter factory=".barra.BarraControlPanelAdapter" />
+
+  <!-- Registra a browser view que sera o painel de controle com o nome de
+       brasil.gov.barra-config.
+       apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
+       estiver disponivel.       
+   -->  
+  <browser:page
+    name="brasil.gov.barra-config"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".barra.BarraControlPanel"
+    layer="brasil.gov.barra.interfaces.IBarraInstalada"
+    permission="cmf.ManagePortal"
+    />
+
+</configure>

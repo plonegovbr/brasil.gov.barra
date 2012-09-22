@@ -1,0 +1,79 @@
+**************************************
+Brasil.gov.br: Barra de Identidade
+**************************************
+
+Teste funcional de aplicacao da barra
+========================================
+
+Configurando o teste
+---------------------
+
+Inicialmente definimos variaveis a serem utilizadas durante todo o teste::
+
+    >>> app = layer['app']
+    >>> portal = layer['portal']
+    >>> request = layer['request']
+
+    >>> from plone.testing.z2 import Browser
+    >>> from plone.app.testing import SITE_OWNER_NAME
+    >>> from plone.app.testing import SITE_OWNER_PASSWORD
+
+    >>> browser = Browser(app)
+    >>> portalURL = portal.absolute_url()
+
+Acesso anonimo
+---------------------
+
+A barra deve estar visivel para todos os usuarios, inclusive os nao 
+autenticados.
+
+Como usuario anonimo acessamos a raiz do site
+
+    >>> browser.open(portalURL)
+
+No conteudo da pagina retornado temos que validar a existencia de alguns
+elementos, comecando pelos links da barra, tanto para o portal de acesso a
+informacao::
+
+    >>> 'www.sic.gov.br' in browser.contents
+    True
+
+Como ao Portal Brasil.gov.br::
+
+    >>> 'www.brasil.gov.br' in browser.contents
+    True
+
+Tambem validamos que o html da barra foi inserido corretamente::
+
+    >>> '<div id="barra-brasil">' in browser.contents
+    True
+
+Acesso autenticado
+---------------------
+
+Faremos o login como administrador do site, para isto devemos preencher o
+formulário *login_form*::
+
+    >>> browser.open(portalURL + '/login_form')
+    >>> browser.getControl(name='__ac_name').value = SITE_OWNER_NAME
+    >>> browser.getControl(name='__ac_password').value = SITE_OWNER_PASSWORD
+    >>> browser.getControl(name='submit').click()
+    >>> 'You are now logged in' in browser.contents
+    True
+
+Agora, como usuario autenticado -- e com papel administrativo -- realizaremos
+as mesmas validacoes. Primeiro acessando a capa do site:
+
+    >>> browser.open(portalURL)
+
+Validando os links::
+
+    >>> 'www.sic.gov.br' in browser.contents
+    True
+    >>> 'www.brasil.gov.br' in browser.contents
+    True
+
+E tambem o html::
+
+    >>> '<div id="barra-brasil">' in browser.contents
+    True

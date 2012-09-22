@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.barra.gov">
+    
+    <!-- Upgrades-->
+    <genericsetup:upgradeStep
+        title="Brasil.gov.br: Barra de identidade visual do governo"
+        description="Instalacao inicial da Barra de Identidade"
+        source="0.0"
+        destination="1000"
+        sortkey="1"
+        handler="brasil.gov.barra.upgrades.to1000.from0"
+        profile="brasil.gov.barra:default" />
+
+</configure>

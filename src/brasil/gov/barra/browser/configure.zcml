@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="brasil.gov.barra">
+
+  <!-- Registra a pasta resources com o nome de 
+       ++resources+brasil.gov.barra/ dentro do Plone
+   -->
+  <browser:resourceDirectory name="brasil.gov.barra"
+                             directory="resources" />
+
+  <!-- Registra o viewlet da barra com nome de brasil.gov.barra
+       para o viewlet manager
+       plone.app.layout.viewlets.interfaces.IPortalTop
+       apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
+       estiver disponivel.       
+   -->
+  <browser:viewlet
+      name="brasil.gov.barra"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class=".barra.BarraViewlet"
+      layer="brasil.gov.barra.interfaces.IBarraInstalada"
+      permission="zope.Public"
+      />
+
+  <!-- Registra a browser view BarraHelper com nome de barra_helper
+       apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
+       estiver disponivel.
+   -->
+  <browser:page
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      name="barra_helper"
+      class=".helper.BarraHelper"
+      allowed_interface="brasil.gov.barra.interfaces.IBarraHelper"
+      layer="brasil.gov.barra.interfaces.IBarraInstalada"
+      permission="zope.Public"
+      />
+    
+</configure>

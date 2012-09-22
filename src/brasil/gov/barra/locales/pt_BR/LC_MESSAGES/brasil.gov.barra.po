@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plone.app.discussion\n"
+"POT-Creation-Date: 2012-09-19 00:19+0000\n"
+"PO-Revision-Date: 2012-09-18 23:00+0000\n"
+"Last-Translator: PloneGov.Br <gov@plone.org.br>\n"
+"Language-Team: PloneGov.Br <gov@plone.org.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: pt_BR\n"
+"Language-Name: Português do Brasil\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: brasil.gov.barra\n"
+
+#: ../controlpanel/barra.py:20
+msgid "Azul"
+msgstr ""
+
+#: ../controlpanel/barra.py:60
+#: ../profiles/default/controlpanel.xml
+msgid "Brasil.gov.br: Barra de identidade"
+msgstr ""
+
+#: ../controlpanel/barra.py:21
+msgid "Cinza"
+msgstr ""
+
+#: ../controlpanel/barra.py:62
+msgid "Configuração visual"
+msgstr ""
+
+#: ../controlpanel/barra.py:61
+msgid "Configurações do comportamento da barra de identidade"
+msgstr ""
+
+#: ../controlpanel/barra.py:31
+msgid "Cor de fundo"
+msgstr ""
+
+#: ../controlpanel/barra.py:22
+msgid "Preto"
+msgstr ""
+
+#: ../controlpanel/barra.py:23
+msgid "Verde"
+msgstr ""
+
+#. Default: "Escolha uma das opções para cor de fundo da barra."
+#: ../controlpanel/barra.py:32
+msgid "help_cor_barra"
+msgstr ""
+
+#: ../controlpanel/barra.py:37
+msgid "verde"
+msgstr ""
+
