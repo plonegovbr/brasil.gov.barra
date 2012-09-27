@@ -27,7 +27,7 @@ class ControlPanelTest(unittest.TestCase):
     def test_controlpanel_view(self):
         ''' Validamos se o control panel esta acessivel '''
         view = getMultiAdapter((self.portal, self.portal.REQUEST),
-                                name='brasil.gov.barra-config')
+                               name='brasil.gov.barra-config')
         view = view.__of__(self.portal)
         self.failUnless(view())
 

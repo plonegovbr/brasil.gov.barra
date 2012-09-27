@@ -19,7 +19,7 @@ STYLESHEETS = [
     "++resource++brasil.gov.barra/cinza.css",
     "++resource++brasil.gov.barra/preto.css",
     "++resource++brasil.gov.barra/verde.css",
-    ]
+]
 
 
 class BaseTestCase(unittest.TestCase):

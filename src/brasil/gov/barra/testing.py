@@ -24,9 +24,8 @@ FIXTURE = Fixture()
 
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
-    name='brasil.gov.barra:Integration',
-    )
+    name='brasil.gov.barra:Integration')
+
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
-    name='brasil.gov.barra:Functional',
-    )
+    name='brasil.gov.barra:Functional')

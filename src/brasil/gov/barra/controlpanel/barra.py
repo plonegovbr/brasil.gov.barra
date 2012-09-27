@@ -22,8 +22,7 @@ from brasil.gov.barra import MessageFactory as _
 cores = SimpleVocabulary([SimpleTerm(value=u'azul', title=_(u'Azul')),
                           SimpleTerm(value=u'cinza', title=_(u'Cinza')),
                           SimpleTerm(value=u'preto', title=_(u'Preto')),
-                          SimpleTerm(value=u'verde', title=_(u'Verde')),
-                        ])
+                          SimpleTerm(value=u'verde', title=_(u'Verde'))])
 
 
 class IBarraConfSchema(Interface):
@@ -33,12 +32,11 @@ class IBarraConfSchema(Interface):
         title=_(u'Cor de fundo'),
         description=_(u'help_cor_barra',
                       default=u"Escolha uma das opções para "
-                               "cor de fundo da barra.",
-            ),
+                              u"cor de fundo da barra."),
         required=True,
         default=_(u'verde'),
         vocabulary=cores,
-        )
+    )
 
 
 class BarraControlPanelAdapter(SchemaAdapterBase):
