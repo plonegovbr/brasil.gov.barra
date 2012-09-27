@@ -15,7 +15,7 @@ echo '====== Running PyFlakes ======'
 bin/zopepy setup.py flakes; handle_exit
 
 echo '====== Running pep8 =========='
-bin/pep8 --ignore=E501 src/collective/behavior/localregistry; handle_exit
+bin/pep8 --ignore=E501 src/brasil/gov/barra; handle_exit
 bin/pep8 --ignore=E501 setup.py; handle_exit
 
 if [ $EXITCODE -ne 0 ]; then
