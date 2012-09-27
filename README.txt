@@ -36,3 +36,15 @@ Link para o painel de controle:
 Opções de configuração da barra:
 
 .. image:: https://github.com/plonegovbr/brasil.gov.barra/raw/master/screenshot-controle2.png
+
+Estado deste pacote
+---------------------
+
+O **brasil.gov.barra** tem testes automatizados e, a cada alteração em seu
+código os testes são executados pelo serviço Travis. 
+
+O estado atual dos testes pode ser visto na imagem a seguir:
+
+.. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.barra.png
+    :target: http://travis-ci.org/plonegovbr/brasil.gov.barra
+
