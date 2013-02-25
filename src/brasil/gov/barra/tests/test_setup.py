@@ -6,6 +6,7 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.browserlayer.utils import registered_layers
+from Products.GenericSetup.upgrade import listUpgradeSteps
 from zope.site.hooks import setSite
 
 import unittest2 as unittest
@@ -60,6 +61,25 @@ class TestInstall(BaseTestCase):
         self.assertTrue(sheet is not None)
         self.assertTrue(sheet.getProperty("cor") == 'verde')
         self.assertTrue(sheet.getProperty("local"))
+
+
+class TestUpgrade(BaseTestCase):
+    """ensure product upgrades work"""
+
+    profile = 'brasil.gov.barra:default'
+
+    def test_to1000_from0(self):
+
+        upgradeSteps = listUpgradeSteps(self.st,
+                                        self.profile,
+                                        '0.0')
+        step = [step for step in upgradeSteps
+                if (step['dest'] == ('1000',))
+                and (step['source'] == ('0', '0'))]
+        step[0].get('step').doStep(self.st)
+        # Testamos a versao do profile
+        self.assertEquals(self.st.getLastVersionForProfile(self.profile),
+                          '1000')
 
 
 class TestUninstall(BaseTestCase):
