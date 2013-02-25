@@ -1,8 +1,15 @@
-<div id="barra-brasil">
+<metal:barra xmlns:tal="http://xml.zope.org/namespaces/tal"
+			 xmlns:metal="http://xml.zope.org/namespaces/metal">
+<div id="barra-brasil"  tal:condition="view/local">
     <div class="barra">
         <ul>
             <li><a href="http://www.acessoainformacao.gov.br" class="ai" title="Acesso à informação">www.sic.gov.br</a></li>
             <li><a href="http://www.brasil.gov.br" class="brasilgov" title="Portal de Estado do Brasil">www.brasil.gov.br</a></li>
         </ul>
-    </div>
+    </div> 
 </div>
+<div id="barra-brasil" tal:condition="not:view/local">
+		<a href="http://brasil.gov.br" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Portal do Governo Brasileiro</a>
+    	<script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"></script>
+    </div>
+</metal:barra>

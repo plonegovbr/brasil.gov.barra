@@ -29,6 +29,16 @@ cores = SimpleVocabulary([SimpleTerm(value=u'azul', title=_(u'Azul')),
 class IBarraConfSchema(Interface):
     """ Schema de configuracao da Barra de Identidade """
 
+    local = Bool(
+        title=_(u'Usar barra local'),
+        description=_(u'help_barra_local',
+                      default=u"Devemos servir esta barra a partir "
+                              u"deste site ou utilizar a versão "
+                              u"disponível em barra.brasil.gov.br?"),
+        required=False,
+        default=True,
+    )
+
     cor = Choice(
         title=_(u'Cor de fundo'),
         description=_(u'help_cor_barra',
@@ -57,6 +67,10 @@ class BarraControlPanelAdapter(SchemaAdapterBase):
         # Define que o contexto a ser utilizado para o schema IBarraConfSchema
         # sera a property sheet brasil_gov
         self.context = portal_properties.brasil_gov
+
+    # Define que o atributo local do schema sera armazenado como propriedade
+    # dentro deste contexto
+    local = ProxyFieldProperty(IBarraConfSchema['local'])
 
     # Define que o atributo cor do schema sera armazenado como propriedade
     # dentro deste contexto

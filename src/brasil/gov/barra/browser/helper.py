@@ -47,8 +47,8 @@ class BarraHelper(BrowserView):
     def local(self):
         ''' Retorna a configuracao de cor da view
 
-            :returns: Cor da barra de identidade
-            :rtype: string
+            :returns: Se devemos servir a barra localmente
+            :rtype: bool
         '''
         # Retorna se a barra sera montada localmente,
         # como armazenada na property sheet ou o valor padrao True
