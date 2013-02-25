@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
-
-import unittest2 as unittest
-
+from brasil.gov.barra.interfaces import IBarraInstalada
+from brasil.gov.barra.testing import INTEGRATION_TESTING
+from plone.app.testing import logout
+from Products.CMFCore.utils import getToolByName
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 
-from plone.app.testing import logout
-
-from Products.CMFCore.utils import getToolByName
-
-from brasil.gov.barra.interfaces import IBarraInstalada
-
-from brasil.gov.barra.testing import INTEGRATION_TESTING
+import unittest2 as unittest
 
 
 class ControlPanelTest(unittest.TestCase):

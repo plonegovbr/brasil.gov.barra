@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.barra.config import PROJECTNAME
+
 import logging
 
-from brasil.gov.barra.config import PROJECTNAME
 
 logger = logging.getLogger(PROJECTNAME)
 

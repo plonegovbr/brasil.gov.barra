@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-import unittest2 as unittest
-from zope.interface import alsoProvides
-
 from brasil.gov.barra.interfaces import IBarraInstalada
 from brasil.gov.barra.testing import INTEGRATION_TESTING
+from zope.interface import alsoProvides
+
+import unittest2 as unittest
 
 
 class HelperViewTest(unittest.TestCase):

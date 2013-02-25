@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 """ Modulo que implementa uma browser view de suporte a Barra de Identidade"""
 from Acquisition import aq_inner
-from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
-
-from zope.interface import implements
-
 from brasil.gov.barra.interfaces import IBarraHelper
+from Products.CMFCore.utils import getToolByName
+from Products.Five import BrowserView
+from zope.interface import implements
 
 
 class BarraHelper(BrowserView):

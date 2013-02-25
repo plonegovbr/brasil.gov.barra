@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 """ Modulo que implementa o painel de controle da Barra de Identidade"""
+from zope.schema import Bool
 from zope.schema import Choice
 from zope.component import adapts
 from zope.interface import Interface

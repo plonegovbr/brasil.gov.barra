@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-
-import unittest2 as unittest
-import doctest
-
+from brasil.gov.barra.testing import FUNCTIONAL_TESTING
 from plone.testing import layered
 
-from brasil.gov.barra.testing import FUNCTIONAL_TESTING
+import doctest
+import unittest2 as unittest
 
 optionflags = doctest.REPORT_ONLY_FIRST_FAILURE
 
