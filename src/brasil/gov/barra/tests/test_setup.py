@@ -79,7 +79,7 @@ class TestUpgrade(BaseTestCase):
         step[0].get('step').doStep(self.st)
         # Testamos a versao do profile
         self.assertEquals(self.st.getLastVersionForProfile(self.profile),
-                          '1000')
+                          (u'1000',))
 
 
 class TestUninstall(BaseTestCase):
