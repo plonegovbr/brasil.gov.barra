@@ -20,5 +20,8 @@ class IBarraHelper(Interface):
     def cor():
         ''' Cor da Barra '''
 
+    def cor_css():
+        ''' Cor do arquivo css a ser adicionado ao portal '''
+
     def local():
         ''' Barra servida localmente '''

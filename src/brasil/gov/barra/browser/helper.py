@@ -44,6 +44,19 @@ class BarraHelper(BrowserView):
             cor = self.sheet.getProperty('cor', cor)
         return cor
 
+    def cor_css(self):
+        ''' Retorna a configuracao de cor da barra de identidade para
+            entregas locais (nao usando a barra hospedada)
+
+            :returns: Cor da barra de identidade
+            :rtype: string
+        '''
+        cor = self.cor()
+        local = self.local()
+        # Retornamos em branco para barras que nao sao
+        # servidas localmente
+        return local and cor or ''
+
     def local(self):
         ''' Retorna a configuracao de cor da view
 
