@@ -87,4 +87,4 @@ class BarraControlPanel(ControlPanelForm):
     # Define a descricao deste painel de controle
     description = _(u'Configurações do comportamento da barra de identidade')
     # Define o titulo do formulario deste painel de controle
-    form_name = _(u'Configuração visual')
+    form_name = _(u'Configuração funcional e visual')
