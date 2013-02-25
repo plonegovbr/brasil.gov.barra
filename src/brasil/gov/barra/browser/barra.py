@@ -21,4 +21,5 @@ class BarraViewlet(ViewletBase):
         portal_state = self.portal_state
         helper = portal_state.portal().restrictedTraverse('@@barra_helper')
         self.local = helper.local
+        self.cor = helper.cor
         self.site_url = portal_state.portal_url()

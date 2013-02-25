@@ -10,6 +10,7 @@
 </div>
 <div id="barra-brasil" tal:condition="not:view/local">
 		<a href="http://brasil.gov.br" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Portal do Governo Brasileiro</a>
-    	<script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"></script>
+    	<script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"
+        tal:attributes="src string:http://barra.brasil.gov.br/barra.js?cor=${view/cor}"></script>
     </div>
 </metal:barra>
