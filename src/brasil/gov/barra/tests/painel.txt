@@ -145,3 +145,22 @@ Mas o arquivo referente a cor preto sera servido com a pagina::
     >>> 'resourcebrasil.gov.barrapreto' in browser.contents
     True
 
+Até o momento utilizamos apenas a versão local da barra -- ou seja, 
+hospedada em nosso próprio portal. Agora usaremos a versão disponível 
+em http://barra.brasil.gov.br.
+
+    >>> browser.getControl(name='form.local').value
+    True
+
+Ao deselecionar esta opção, a barra servida será a remota:
+
+    >>> browser.getControl(name='form.local').value = False    
+
+Esta alteracao so sera persistida se salvarmos este formulario::
+
+    >>> browser.getControl(name="form.actions.save").click()
+
+E o arquivo css nao deverá mais estar acessível:
+
+    >>> 'resourcebrasil.gov.barrapreto' in browser.contents
+    False
