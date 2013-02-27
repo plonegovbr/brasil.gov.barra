@@ -87,6 +87,10 @@ Para, em seguida, alterar o valor da barra para *azul*:
 
     >>> browser.getControl(name='form.cor').value = ['azul']
 
+Utilizaremos a barra localmente:
+
+    >>> browser.getControl(name='form.local').value = True
+
 Esta alteracao so sera persistida se salvarmos este formulario::
 
     >>> browser.getControl(name="form.actions.save").click()
@@ -114,7 +118,7 @@ gerada::
 
 Caso alteremos a cor da barra para *cinza*::
 
-    >>> browser.getControl(name='form.cor').value = ['cinza']
+    >>> browser.getControl(name='form.cor').value = ['cinza']      
     >>> browser.getControl(name="form.actions.save").click()
 
 O css da cor azul nao mais estara disponivel:

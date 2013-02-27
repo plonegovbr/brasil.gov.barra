@@ -60,7 +60,7 @@ class TestInstall(BaseTestCase):
         sheet = getattr(pp, 'brasil_gov', None)
         self.assertTrue(sheet is not None)
         self.assertTrue(sheet.getProperty("cor") == 'verde')
-        self.assertTrue(sheet.getProperty("local"))
+        self.assertFalse(sheet.getProperty("local"))
 
 
 class TestUpgrade(BaseTestCase):

@@ -14,12 +14,29 @@ Inicialmente definimos variaveis a serem utilizadas durante todo o teste::
     >>> portal = layer['portal']
     >>> request = layer['request']
 
+    >>> from plone.app.testing import login
+    >>> from plone.app.testing import logout
+    >>> from plone.app.testing import setRoles
     >>> from plone.testing.z2 import Browser
+    >>> from plone.app.testing import TEST_USER_ID
+    >>> from plone.app.testing import TEST_USER_NAME    
     >>> from plone.app.testing import SITE_OWNER_NAME
     >>> from plone.app.testing import SITE_OWNER_PASSWORD
 
     >>> browser = Browser(app)
     >>> portalURL = portal.absolute_url()
+
+
+Adiciona barra localmente
+---------------------------
+
+    >>> setRoles(portal, TEST_USER_ID, ['Manager' ])
+    >>> login(portal, TEST_USER_NAME)
+    >>> portal.portal_properties.brasil_gov.local = True
+    >>> import transaction
+    >>> transaction.commit()
+    >>> logout()
+
 
 Acesso anonimo
 ---------------------
