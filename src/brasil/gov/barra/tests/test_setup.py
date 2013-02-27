@@ -98,6 +98,6 @@ class TestUninstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = self.portal.portal_css
-        for js in STYLESHEETS:
-            self.assertTrue(js not in portal_css.getResourceIds(),
-                            '%s installed' % js)
+        for css in STYLESHEETS:
+            self.assertTrue(css not in portal_css.getResourceIds(),
+                            '%s installed' % css)
