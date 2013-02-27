@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: plone.app.discussion\n"
+"Project-Id-Version: brasil.gov.barra\n"
 "POT-Creation-Date: 2012-09-18 23:00+0000\n"
 "PO-Revision-Date: 2012-09-18 23:00+0000\n"
 "Last-Translator: PloneGov.Br <gov@plone.org.br>\n"
