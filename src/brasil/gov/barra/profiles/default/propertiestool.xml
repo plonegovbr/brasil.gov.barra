@@ -2,6 +2,6 @@
   <object name="brasil_gov" meta_type="Plone Property Sheet">
       <property name="title" type="string" purge="False">Configurações de sites governamentais</property>
       <property name="cor" type="string" purge="False">verde</property>
-      <property name="local" type="boolean">True</property>      
+      <property name="local" type="boolean">False</property>      
   </object>
 </object>
