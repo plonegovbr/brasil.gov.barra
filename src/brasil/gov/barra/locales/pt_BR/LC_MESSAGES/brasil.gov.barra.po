@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: plone.app.discussion\n"
-"POT-Creation-Date: 2012-09-19 00:19+0000\n"
+"POT-Creation-Date: 2013-02-27 16:48+0000\n"
 "PO-Revision-Date: 2012-09-18 23:00+0000\n"
 "Last-Translator: PloneGov.Br <gov@plone.org.br>\n"
 "Language-Team: PloneGov.Br <gov@plone.org.br>\n"
@@ -14,45 +14,54 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: brasil.gov.barra\n"
 
-#: ../controlpanel/barra.py:20
+#: ../controlpanel/barra.py:23
 msgid "Azul"
-msgstr ""
+msgstr "Azul"
 
-#: ../controlpanel/barra.py:60
+#: ../controlpanel/barra.py:86
 #: ../profiles/default/controlpanel.xml
 msgid "Brasil.gov.br: Barra de identidade"
-msgstr ""
+msgstr "Brasil.gov.br: Barra de identidade"
 
-#: ../controlpanel/barra.py:21
+#: ../controlpanel/barra.py:24
 msgid "Cinza"
-msgstr ""
+msgstr "Cinza"
 
-#: ../controlpanel/barra.py:62
-msgid "Configuração visual"
-msgstr ""
+#: ../controlpanel/barra.py:90
+msgid "Configuração funcional e visual"
+msgstr "Configuração funcional e visual"
 
-#: ../controlpanel/barra.py:61
+#: ../controlpanel/barra.py:88
 msgid "Configurações do comportamento da barra de identidade"
-msgstr ""
+msgstr "Configurações do comportamento da barra de identidade"
 
-#: ../controlpanel/barra.py:31
+#: ../controlpanel/barra.py:43
 msgid "Cor de fundo"
-msgstr ""
+msgstr "Cor de fundo"
 
-#: ../controlpanel/barra.py:22
+#: ../controlpanel/barra.py:25
 msgid "Preto"
-msgstr ""
+msgstr "Preto"
 
-#: ../controlpanel/barra.py:23
+#: ../controlpanel/barra.py:33
+msgid "Usar barra local"
+msgstr "Usar barra local"
+
+#: ../controlpanel/barra.py:26
 msgid "Verde"
-msgstr ""
+msgstr "Verde"
+
+#. Default: "Devemos servir esta barra a partir deste site ou utilizar a versão disponível em barra.brasil.gov.br?"
+#: ../controlpanel/barra.py:34
+msgid "help_barra_local"
+msgstr "Devemos servir esta barra a partir deste site ou utilizar a versão disponível em barra.brasil.gov.br?"
 
 #. Default: "Escolha uma das opções para cor de fundo da barra."
-#: ../controlpanel/barra.py:32
+#: ../controlpanel/barra.py:44
 msgid "help_cor_barra"
-msgstr ""
+msgstr "Escolha uma das opções para cor de fundo da barra."
 
-#: ../controlpanel/barra.py:37
+#: ../controlpanel/barra.py:48
 msgid "verde"
-msgstr ""
+msgstr "verde"
 
