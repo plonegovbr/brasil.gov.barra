@@ -51,9 +51,9 @@ class TestInstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = self.portal.portal_css
-        for js in STYLESHEETS:
-            self.assertTrue(js in portal_css.getResourceIds(),
-                            '%s not installed' % js)
+        for css in STYLESHEETS:
+            self.assertTrue(css in portal_css.getResourceIds(),
+                            '%s not installed' % css)
 
     def test_default_configuration(self):
         pp = self.portal.portal_properties
