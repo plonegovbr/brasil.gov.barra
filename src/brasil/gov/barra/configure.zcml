@@ -32,4 +32,7 @@
 	     i18n:attributes="title; description"
 	     />
 
+    <utility factory=".config.HiddenProfiles"
+             name="brasil.gov.barra" />
+
 </configure>
