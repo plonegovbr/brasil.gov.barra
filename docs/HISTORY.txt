@@ -4,6 +4,9 @@ Alterações
 0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+  * Suporte a barra hospedada no endereço barra.brasil.gov.br
+    [ericof]
+
   * Suporte a quatro cores da barra
     [ericof]
 
