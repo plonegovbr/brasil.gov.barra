@@ -1,7 +1,7 @@
 Alterações
 ------------
 
-0.5 (unreleased)
+1.0a1 (2013-07-22)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   * Suporte a barra hospedada no endereço barra.brasil.gov.br
