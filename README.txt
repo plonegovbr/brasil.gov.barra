@@ -19,7 +19,7 @@ Requisitos
 
 Para uso deste pacote, seu site deve ter sido construído com:
 
-    * Plone 4.0 ou superior (http://plone.org/products/plone)
+    * Plone 4.2 ou superior (http://plone.org/products/plone)
 
 Captura de tela
 ------------------
