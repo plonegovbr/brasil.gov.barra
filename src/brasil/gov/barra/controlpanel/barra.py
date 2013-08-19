@@ -22,7 +22,7 @@ from brasil.gov.barra import MessageFactory as _
 # Vocabulario das cores possiveis para a Barra de Identidade
 cores = SimpleVocabulary([SimpleTerm(value=u'azul', title=_(u'Azul')),
                           SimpleTerm(value=u'cinza', title=_(u'Cinza')),
-                          SimpleTerm(value=u'preto', title=_(u'Preto')),
+                          SimpleTerm(value=u'preta', title=_(u'Preta')),
                           SimpleTerm(value=u'verde', title=_(u'Verde'))])
 
 
