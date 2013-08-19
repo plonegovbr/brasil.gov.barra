@@ -105,7 +105,7 @@ E somos informados que as alterações foram salvas::
     >>> 'Changes saved.' in browser.contents
     True
 
-Para validarmos que alem de salvas, as alteracoes ja foram aplicadas, 
+Para validarmos que alem de salvas, as alteracoes ja foram aplicadas,
 buscaremos pelo indicativo do css da cor azul no conteudo da pagina
 gerada::
 
@@ -118,7 +118,7 @@ gerada::
 
 Caso alteremos a cor da barra para *cinza*::
 
-    >>> browser.getControl(name='form.cor').value = ['cinza']      
+    >>> browser.getControl(name='form.cor').value = ['cinza']
     >>> browser.getControl(name="form.actions.save").click()
 
 O css da cor azul nao mais estara disponivel:
@@ -133,7 +133,7 @@ Sendo substituido pelo de cor *cinza*
 
 Podemos realizar a alteracao para a cor *preto*:
 
-    >>> browser.getControl(name='form.cor').value = ['preto']
+    >>> browser.getControl(name='form.cor').value = ['preta']
     >>> browser.getControl(name="form.actions.save").click()
 
 E os arquivos anteriores nao estarao disponiveis::
@@ -149,8 +149,8 @@ Mas o arquivo referente a cor preto sera servido com a pagina::
     >>> 'resourcebrasil.gov.barrapreto' in browser.contents
     True
 
-Até o momento utilizamos apenas a versão local da barra -- ou seja, 
-hospedada em nosso próprio portal. Agora usaremos a versão disponível 
+Até o momento utilizamos apenas a versão local da barra -- ou seja,
+hospedada em nosso próprio portal. Agora usaremos a versão disponível
 em http://barra.brasil.gov.br.
 
     >>> browser.getControl(name='form.local').value
@@ -158,7 +158,7 @@ em http://barra.brasil.gov.br.
 
 Ao deselecionar esta opção, a barra servida será a remota:
 
-    >>> browser.getControl(name='form.local').value = False    
+    >>> browser.getControl(name='form.local').value = False
 
 Esta alteracao so sera persistida se salvarmos este formulario::
 
