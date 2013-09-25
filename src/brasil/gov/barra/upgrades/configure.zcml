@@ -2,7 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.barra">
-    
+
     <!-- Upgrades-->
     <genericsetup:upgradeStep
         title="Brasil.gov.br: Barra de identidade visual do governo"
@@ -12,5 +12,7 @@
         sortkey="1"
         handler="brasil.gov.barra.upgrades.to1000.from0"
         profile="brasil.gov.barra:default" />
+
+    <include package=".v2000" />
 
 </configure>
