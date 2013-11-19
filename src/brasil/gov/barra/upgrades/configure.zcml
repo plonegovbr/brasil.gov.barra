@@ -4,15 +4,7 @@
     i18n_domain="brasil.gov.barra">
 
     <!-- Upgrades-->
-    <genericsetup:upgradeStep
-        title="Brasil.gov.br: Barra de identidade visual do governo"
-        description="Instalacao inicial da Barra de Identidade"
-        source="0.0"
-        destination="1000"
-        sortkey="1"
-        handler="brasil.gov.barra.upgrades.to1000.from0"
-        profile="brasil.gov.barra:default" />
-
+    <include package=".v1000" />
     <include package=".v2000" />
 
 </configure>
