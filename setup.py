@@ -4,28 +4,28 @@ import os
 from setuptools import setup, find_packages
 
 version = '1.0a2.dev0'
-long_description = (open("README.txt").read() + "\n" +
-                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
-                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" +
-                    open(os.path.join("docs", "HISTORY.txt")).read())
+long_description = (open('README.txt').read() + '\n' +
+                    open(os.path.join('docs', 'INSTALL.txt')).read() + '\n' +
+                    open(os.path.join('docs', 'CREDITS.txt')).read() + '\n' +
+                    open('CHANGES.rst').read())
 
 
 setup(name='brasil.gov.barra',
       version=version,
-      description="Brasil.gov.br: Barra de Identidade ",
+      description='Brasil.gov.br: Barra de Identidade ',
       long_description=long_description,
       classifiers=[
-          "Development Status :: 3 - Alpha",
-          "Environment :: Web Environment",
-          "Framework :: Plone",
-          "Framework :: Plone :: 4.2",
-          "Intended Audience :: Developers",
-          "Operating System :: OS Independent",
-          "Programming Language :: Python",
-          "Programming Language :: Python :: 2.7",
-          "Topic :: Internet :: WWW/HTTP",
-          "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-          "Topic :: Software Development :: Libraries :: Python Modules"],
+          'Development Status :: 3 - Alpha',
+          'Environment :: Web Environment',
+          'Framework :: Plone',
+          'Framework :: Plone :: 4.2',
+          'Intended Audience :: Developers',
+          'Operating System :: OS Independent',
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2.7',
+          'Topic :: Internet :: WWW/HTTP',
+          'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+          'Topic :: Software Development :: Libraries :: Python Modules'],
       keywords='brasil.gov.br barra plone plonegovbr temas ',
       author='PloneGov.Br',
       author_email='gov@plone.org.br',

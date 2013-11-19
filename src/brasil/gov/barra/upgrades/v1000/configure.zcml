@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.barra">
+
+    <!-- Upgrade Steps -->
+    <gs:upgradeSteps
+        source="0"
+        destination="1000"
+        profile="brasil.gov.barra:default">
+
+        <gs:upgradeStep
+            title="Passo vazio"
+            description="Passo de atualizacao vazio"
+            handler=".handler.stub"
+            />
+
+    </gs:upgradeSteps>
+
+
+</configure>

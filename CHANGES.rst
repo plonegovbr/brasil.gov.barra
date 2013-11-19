@@ -4,7 +4,8 @@ Alterações
 1.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+  * Alteração no valor de cor referente a cor "Preto" (closes `#2`_).
+    [felipeduardo]
 
 
 1.0a1 (2013-07-22)
@@ -18,3 +19,5 @@ Alterações
 
   * Versão inicial do pacote
   	[ericof]
+
+.. _`#2`: https://github.com/plonegovbr/brasil.gov.barra/issues/2
