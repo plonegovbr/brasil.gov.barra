@@ -36,13 +36,6 @@ buildout:
 4. Acesse o painel de controle e instale o produto
 **Brasil.gov.br: Barra de identidade visual do governo**.
 
-Requisitos
-------------
-
-Para uso deste pacote, seu site deve ter sido construído com:
-
-    * Plone 4.2 ou superior (http://plone.org/products/plone)
-
 Captura de tela
 ------------------
 

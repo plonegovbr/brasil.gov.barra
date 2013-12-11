@@ -36,7 +36,10 @@ setup(name='brasil.gov.barra',
       namespace_packages=['brasil', 'brasil.gov'],
       include_package_data=True,
       zip_safe=False,
-      install_requires=['setuptools'],
+      install_requires=[
+          'Products.CMFPlone >=4.2',
+          'setuptools',
+      ],
       extras_require={
           'develop': [
               'Sphinx',
