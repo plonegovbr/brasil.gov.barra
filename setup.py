@@ -1,14 +1,14 @@
 # -*- coding:utf-8 -*-
 
-import os
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from setuptools import setup
 
 version = '1.0a2.dev0'
-long_description = (open("README.txt").read() + "\n" +
-                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
-                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" +
-                    open(os.path.join("docs", "HISTORY.txt")).read())
-
+long_description = (
+    open('README.rst').read() + '\n' +
+    open('CONTRIBUTORS.rst').read() + '\n' +
+    open('CHANGES.rst').read()
+)
 
 setup(name='brasil.gov.barra',
       version=version,

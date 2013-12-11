@@ -1,9 +1,3 @@
-include *.txt
+graft docs
+graft src
 include *.rst
-include MANIFEST.in
-include *.png
-
-recursive-include src *
-recursive-include docs *
-
-global-exclude *pyc
