@@ -63,7 +63,7 @@ class TestUpgrade(BaseTestCase):
     def test_profile_version(self):
         # Testamos a versao do profile
         self.assertEquals(self.st.getLastVersionForProfile(self.profile),
-                          (u'2000',))
+                          (u'1002',))
 
     def test_to1000_from0(self):
 
@@ -75,13 +75,13 @@ class TestUpgrade(BaseTestCase):
                 and (step['source'] == ('0', '0'))][0]
         step.get('step').doStep(self.st)
 
-    def test_to2000_from1000(self):
+    def test_to1002_from1000(self):
 
         upgradeSteps = listUpgradeSteps(self.st,
                                         self.profile,
                                         '0.0')
         step = [step for step in upgradeSteps[1]
-                if (step['dest'] == ('2000',))
+                if (step['dest'] == ('1002',))
                 and (step['source'] == ('1000',))][0]
         step.get('step').doStep(self.st)
 

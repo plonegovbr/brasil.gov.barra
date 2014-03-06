@@ -7,20 +7,20 @@
   <!-- Profiles -->
   <gs:registerProfile
       name="default"
-      title="Identidade Digital: Versão 2000"
+      title="Identidade Digital: Versão 1002"
       directory="profiles/default"
-      description="Configurações da Versão 2000 da barra"
+      description="Configurações da Versão 1002 da barra"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
   <!-- Upgrade Steps -->
   <gs:upgradeSteps
         source="1000"
-        destination="2000"
+        destination="1002"
         profile="brasil.gov.barra:default">
 
       <gs:upgradeStep
-          title="Atualiza portal para versão 2000"
+          title="Atualiza portal para versão 1002"
           description="Revisão de registros de javascript e css."
           handler=".handler.apply_profile"
           />

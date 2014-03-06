@@ -30,9 +30,9 @@ def unregister_old_css(context):
 
 
 def apply_profile(context):
-    ''' Atualiza perfil para versao 2000 '''
+    ''' Atualiza perfil para versao 1002 '''
     logger = logging.getLogger(PROJECTNAME)
-    profile = 'profile-brasil.gov.barra.upgrades.v2000:default'
+    profile = 'profile-brasil.gov.barra.upgrades.v1002:default'
     loadMigrationProfile(context, profile)
     unregister_old_css(context)
-    logger.info('Atualizado para versao 2000')
+    logger.info('Atualizado para versao 1002')
