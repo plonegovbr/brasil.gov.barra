@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:zcml="http://namespaces.zope.org/zcml"
@@ -32,6 +33,12 @@
 	     i18n:attributes="title; description"
 	     />
 
+    <!-- Registra pasta de elementos estaticos -->
+    <browser:resourceDirectory
+        name="brasil.gov.barra"
+        directory="static"
+        />
+    
     <utility factory=".config.HiddenProfiles"
              name="brasil.gov.barra" />
 

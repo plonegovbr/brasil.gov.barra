@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.barra">
+    
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Identidade Digital: Versão 1002"
+      directory="profiles/default"
+      description="Configurações da Versão 1002 da barra"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  
+  <!-- Upgrade Steps -->
+  <gs:upgradeSteps
+        source="1000"
+        destination="1002"
+        profile="brasil.gov.barra:default">
+
+      <gs:upgradeStep
+          title="Atualiza portal para versão 1002"
+          description="Revisão de registros de javascript e css."
+          handler=".handler.apply_profile"
+          />
+
+  </gs:upgradeSteps>
+
+</configure>

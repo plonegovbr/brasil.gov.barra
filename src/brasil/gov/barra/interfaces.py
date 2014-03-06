@@ -17,11 +17,5 @@ class IBarraHelper(Interface):
         Os metodos definidos aqui serao acessiveis
         diretamente na Browser View
     """
-    def cor():
-        ''' Cor da Barra '''
-
-    def cor_css():
-        ''' Cor do arquivo css a ser adicionado ao portal '''
-
     def local():
         ''' Barra servida localmente '''

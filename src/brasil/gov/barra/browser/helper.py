@@ -31,34 +31,8 @@ class BarraHelper(BrowserView):
         # Caso a sheet nao exista, retornamos None
         self.sheet = getattr(pp, 'brasil_gov', None)
 
-    def cor(self):
-        ''' Retorna a configuracao de cor da barra de identidade
-
-            :returns: Cor da barra de identidade
-            :rtype: string
-        '''
-        # Retorna a cor da barra, como armazenada na property sheet
-        # ou o valor padrao verde
-        cor = 'verde'
-        if self.sheet:
-            cor = self.sheet.getProperty('cor', cor)
-        return cor
-
-    def cor_css(self):
-        ''' Retorna a configuracao de cor da barra de identidade para
-            entregas locais (nao usando a barra hospedada)
-
-            :returns: Cor da barra de identidade
-            :rtype: string
-        '''
-        cor = self.cor()
-        local = self.local()
-        # Retornamos em branco para barras que nao sao
-        # servidas localmente
-        return local and cor or ''
-
     def local(self):
-        ''' Retorna a configuracao de cor da view
+        ''' Retorna se a barra deve ser servida localmente
 
             :returns: Se devemos servir a barra localmente
             :rtype: bool

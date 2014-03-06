@@ -49,15 +49,10 @@ Como usuario anonimo acessamos a raiz do site
     >>> browser.open(portalURL)
 
 No conteudo da pagina retornado temos que validar a existencia de alguns
-elementos, comecando pelos links da barra, tanto para o portal de acesso a
-informacao::
+elementos, comecando pelos links da barra, verificando a existência do link do
+Portal Brasil.gov.br::
 
-    >>> 'www.sic.gov.br' in browser.contents
-    True
-
-Como ao Portal Brasil.gov.br::
-
-    >>> 'www.brasil.gov.br' in browser.contents
+    >>> 'brasil.gov.br' in browser.contents
     True
 
 Tambem validamos que o html da barra foi inserido corretamente::
@@ -85,9 +80,7 @@ as mesmas validacoes. Primeiro acessando a capa do site:
 
 Validando os links::
 
-    >>> 'www.sic.gov.br' in browser.contents
-    True
-    >>> 'www.brasil.gov.br' in browser.contents
+    >>> 'brasil.gov.br' in browser.contents
     True
 
 E tambem o html::

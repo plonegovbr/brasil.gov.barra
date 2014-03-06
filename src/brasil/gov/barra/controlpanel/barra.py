@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 """ Modulo que implementa o painel de controle da Barra de Identidade"""
 from zope.schema import Bool
-from zope.schema import Choice
 from zope.component import adapts
 from zope.interface import Interface
 from zope.interface import implements
@@ -15,15 +14,7 @@ from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 
 from plone.app.controlpanel.form import ControlPanelForm
 
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-
 from brasil.gov.barra import MessageFactory as _
-
-# Vocabulario das cores possiveis para a Barra de Identidade
-cores = SimpleVocabulary([SimpleTerm(value=u'azul', title=_(u'Azul')),
-                          SimpleTerm(value=u'cinza', title=_(u'Cinza')),
-                          SimpleTerm(value=u'preto', title=_(u'Preto')),
-                          SimpleTerm(value=u'verde', title=_(u'Verde'))])
 
 
 class IBarraConfSchema(Interface):
@@ -37,16 +28,6 @@ class IBarraConfSchema(Interface):
                               u"disponível em barra.brasil.gov.br?"),
         required=False,
         default=True,
-    )
-
-    cor = Choice(
-        title=_(u'Cor de fundo'),
-        description=_(u'help_cor_barra',
-                      default=u"Escolha uma das opções para "
-                              u"cor de fundo da barra."),
-        required=True,
-        default=_(u'verde'),
-        vocabulary=cores,
     )
 
 
@@ -71,10 +52,6 @@ class BarraControlPanelAdapter(SchemaAdapterBase):
     # Define que o atributo local do schema sera armazenado como propriedade
     # dentro deste contexto
     local = ProxyFieldProperty(IBarraConfSchema['local'])
-
-    # Define que o atributo cor do schema sera armazenado como propriedade
-    # dentro deste contexto
-    cor = ProxyFieldProperty(IBarraConfSchema['cor'])
 
 
 class BarraControlPanel(ControlPanelForm):
