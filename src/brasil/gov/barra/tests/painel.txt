@@ -77,16 +77,6 @@ Novamente acessamos a configuração da barra::
 
 Porém, agora, faremos alterações nas configurações.
 
-Primeiramente validamos que a cor inicial da barra, conforme definida em
-**profiles/default/propertiestool.xml** e *verde*:
-
-    >>> browser.getControl(name='form.cor').value
-    ['verde']
-
-Para, em seguida, alterar o valor da barra para *azul*:
-
-    >>> browser.getControl(name='form.cor').value = ['azul']
-
 Utilizaremos a barra localmente:
 
     >>> browser.getControl(name='form.local').value = True
@@ -105,49 +95,9 @@ E somos informados que as alterações foram salvas::
     >>> 'Changes saved.' in browser.contents
     True
 
-Para validarmos que alem de salvas, as alteracoes ja foram aplicadas, 
-buscaremos pelo indicativo do css da cor azul no conteudo da pagina
-gerada::
-
-    >>> 'resourcebrasil.gov.barraazul' in browser.contents
-    True
-
 .. note:: Nao buscamos exatamente pelo nome do css pois o Plone
           esta configurado para agrupar os arquivos. Com isto, a
           url final do arquivo de estilos e gerada a cada alteracao.
-
-Caso alteremos a cor da barra para *cinza*::
-
-    >>> browser.getControl(name='form.cor').value = ['cinza']      
-    >>> browser.getControl(name="form.actions.save").click()
-
-O css da cor azul nao mais estara disponivel:
-
-    >>> 'resourcebrasil.gov.barraazul' in browser.contents
-    False
-
-Sendo substituido pelo de cor *cinza*
-
-    >>> 'resourcebrasil.gov.barracinza' in browser.contents
-    True
-
-Podemos realizar a alteracao para a cor *preto*:
-
-    >>> browser.getControl(name='form.cor').value = ['preto']
-    >>> browser.getControl(name="form.actions.save").click()
-
-E os arquivos anteriores nao estarao disponiveis::
-
-    >>> 'resourcebrasil.gov.barraazul' in browser.contents
-    False
-
-    >>> 'resourcebrasil.gov.barracinza' in browser.contents
-    False
-
-Mas o arquivo referente a cor preto sera servido com a pagina::
-
-    >>> 'resourcebrasil.gov.barrapreto' in browser.contents
-    True
 
 Até o momento utilizamos apenas a versão local da barra -- ou seja, 
 hospedada em nosso próprio portal. Agora usaremos a versão disponível 

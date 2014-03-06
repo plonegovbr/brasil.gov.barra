@@ -24,31 +24,6 @@ class HelperViewTest(unittest.TestCase):
         view = view.__of__(self.portal)
         self.failUnless(view)
 
-    def test_helper_view_cor(self):
-        ''' Uso do metodo cor '''
-        # Obtemos a Browser view
-        view = self.portal.restrictedTraverse('@@barra_helper')
-        # Validamos que ela retorne o valor padrao para
-        # a cor da barra (configurado em profiles/default/propertiestool.xml)
-        self.assertTrue(view.cor() == 'verde')
-        # Alteramos o valor armazenado
-        self.sheet.cor = 'azul'
-        # O resultado da consulta a Browser View deve se adequar
-        self.assertTrue(view.cor() == 'azul')
-
-    def test_helper_view_cor_css(self):
-        ''' Uso do metodo cor_css '''
-        # Obtemos a Browser view
-        view = self.portal.restrictedTraverse('@@barra_helper')
-        # Validamos que ela retorne o valor padrao para
-        # a cor da barra (configurado em profiles/default/propertiestool.xml)
-        # hospedada remotamente
-        self.assertTrue(view.cor_css() == '')
-        # Alteramos o armazenamento para local
-        self.sheet.local = True
-        # O resultado da consulta a Browser View deve se adequar
-        self.assertTrue(view.cor_css() == 'verde')
-
     def test_helper_view_local(self):
         ''' Uso do metodo local '''
         # Obtemos a Browser view

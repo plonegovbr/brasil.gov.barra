@@ -11,13 +11,6 @@ from zope.site.hooks import setSite
 
 import unittest2 as unittest
 
-STYLESHEETS = [
-    "++resource++brasil.gov.barra/azul.css",
-    "++resource++brasil.gov.barra/cinza.css",
-    "++resource++brasil.gov.barra/preto.css",
-    "++resource++brasil.gov.barra/verde.css",
-]
-
 
 class BaseTestCase(unittest.TestCase):
     """base test case to be used by other tests"""
@@ -51,15 +44,14 @@ class TestInstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = self.portal.portal_css
-        for css in STYLESHEETS:
-            self.assertTrue(css in portal_css.getResourceIds(),
-                            '%s not installed' % css)
+        css_barra = "++resource++brasil.gov.barra/css/main.css"
+        self.assertTrue(css_barra in portal_css.getResourceIds(),
+                        '%s not installed' % css_barra)
 
     def test_default_configuration(self):
         pp = self.portal.portal_properties
         sheet = getattr(pp, 'brasil_gov', None)
         self.assertTrue(sheet is not None)
-        self.assertTrue(sheet.getProperty("cor") == 'verde')
         self.assertFalse(sheet.getProperty("local"))
 
 
@@ -68,18 +60,30 @@ class TestUpgrade(BaseTestCase):
 
     profile = 'brasil.gov.barra:default'
 
+    def test_profile_version(self):
+        # Testamos a versao do profile
+        self.assertEquals(self.st.getLastVersionForProfile(self.profile),
+                          (u'2000',))
+
     def test_to1000_from0(self):
 
         upgradeSteps = listUpgradeSteps(self.st,
                                         self.profile,
                                         '0.0')
-        step = [step for step in upgradeSteps
+        step = [step for step in upgradeSteps[0]
                 if (step['dest'] == ('1000',))
-                and (step['source'] == ('0', '0'))]
-        step[0].get('step').doStep(self.st)
-        # Testamos a versao do profile
-        self.assertEquals(self.st.getLastVersionForProfile(self.profile),
-                          (u'1000',))
+                and (step['source'] == ('0', '0'))][0]
+        step.get('step').doStep(self.st)
+
+    def test_to2000_from1000(self):
+
+        upgradeSteps = listUpgradeSteps(self.st,
+                                        self.profile,
+                                        '0.0')
+        step = [step for step in upgradeSteps[1]
+                if (step['dest'] == ('2000',))
+                and (step['source'] == ('1000',))][0]
+        step.get('step').doStep(self.st)
 
 
 class TestUninstall(BaseTestCase):
@@ -98,6 +102,6 @@ class TestUninstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = self.portal.portal_css
-        for css in STYLESHEETS:
-            self.assertTrue(css not in portal_css.getResourceIds(),
-                            '%s installed' % css)
+        css_barra = "++resource++brasil.gov.barra/css/main.css"
+        self.assertTrue(css_barra not in portal_css.getResourceIds(),
+                        '%s installed' % css_barra)

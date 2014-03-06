@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.barra">
+    
+  <!-- Profiles -->
+  <gs:registerProfile
+      name="default"
+      title="Identidade Digital: Versão 1000"
+      directory="profiles/default"
+      description="Configurações da Versão 1000 da barra"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  
+  <!-- Upgrade Steps -->
+  <gs:upgradeSteps
+        source="0.0"
+        destination="1000"
+        sortkey="1"
+        profile="brasil.gov.barra:default">
+
+      <gs:upgradeStep
+          title="Brasil.gov.br: Barra de identidade visual do governo"
+          description="Instalacao inicial da Barra de Identidade"
+          handler=".handler.setup"
+          />
+
+  </gs:upgradeSteps>
+
+</configure>

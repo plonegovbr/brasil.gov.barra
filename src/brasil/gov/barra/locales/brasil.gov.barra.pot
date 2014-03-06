@@ -14,17 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../controlpanel/barra.py:23
-msgid "Azul"
-msgstr ""
-
 #: ../controlpanel/barra.py:86
 #: ../profiles/default/controlpanel.xml
 msgid "Brasil.gov.br: Barra de identidade"
-msgstr ""
-
-#: ../controlpanel/barra.py:24
-msgid "Cinza"
 msgstr ""
 
 #: ../controlpanel/barra.py:90
@@ -35,33 +27,12 @@ msgstr ""
 msgid "Configurações do comportamento da barra de identidade"
 msgstr ""
 
-#: ../controlpanel/barra.py:43
-msgid "Cor de fundo"
-msgstr ""
-
-#: ../controlpanel/barra.py:25
-msgid "Preto"
-msgstr ""
-
 #: ../controlpanel/barra.py:33
 msgid "Usar barra local"
-msgstr ""
-
-#: ../controlpanel/barra.py:26
-msgid "Verde"
 msgstr ""
 
 #. Default: "Devemos servir esta barra a partir deste site ou utilizar a versão disponível em barra.brasil.gov.br?"
 #: ../controlpanel/barra.py:34
 msgid "help_barra_local"
-msgstr ""
-
-#. Default: "Escolha uma das opções para cor de fundo da barra."
-#: ../controlpanel/barra.py:44
-msgid "help_cor_barra"
-msgstr ""
-
-#: ../controlpanel/barra.py:48
-msgid "verde"
 msgstr ""
 
