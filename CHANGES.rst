@@ -3,18 +3,19 @@ Alterações
 
 1.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
+* Atualizado produto da barra para ter a mesma aparência da barra
+  remota (closes `#7`_).
+  [felipeduardo][rodfersou]
 
 
 1.0a1 (2013-07-22)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Suporte a barra hospedada no endereço barra.brasil.gov.br
+  [ericof]
+* Suporte a quatro cores da barra
+  [ericof]
+* Versão inicial do pacote
+  [ericof]
 
-  * Suporte a barra hospedada no endereço barra.brasil.gov.br
-    [ericof]
 
-  * Suporte a quatro cores da barra
-    [ericof]
-
-  * Versão inicial do pacote
-  	[ericof]
+.. _`#7`: https://github.com/plonegovbr/brasil.gov.barra/issues/7
