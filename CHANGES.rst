@@ -1,7 +1,7 @@
 Alterações
 ------------
 
-1.0a2 (unreleased)
+1.0 (2014-03-10)
 ^^^^^^^^^^^^^^^^^^
 
 * Oculta passos de atualização da tela de criação do site
