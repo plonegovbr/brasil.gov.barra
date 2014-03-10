@@ -13,3 +13,7 @@ Contribuidores
 
 * André Nogueira [agnogueira] -- Ajustes de estilos
 
+* Felipe Duardo [felipeduardo]
+
+* Rodrigo Souza [rodfersou]
+
