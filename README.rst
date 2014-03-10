@@ -1,5 +1,5 @@
 **************************************
-Brasil.gov.br: Barra de Identidade
+.gov.br: Barra de Identidade
 **************************************
 
 .. contents:: Conteúdo
@@ -39,7 +39,7 @@ buildout:
 Captura de tela
 ------------------
 
-Exemplo de uso deste pacote em um site Plone 4.2 com tema padrão:
+Exemplo de uso deste pacote em um site Plone 4.3 com tema padrão:
 
 .. image:: https://github.com/plonegovbr/brasil.gov.barra/raw/master/screenshot.png
 

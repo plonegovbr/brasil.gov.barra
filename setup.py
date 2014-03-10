@@ -12,7 +12,7 @@ long_description = (
 
 setup(name='brasil.gov.barra',
       version=version,
-      description="Brasil.gov.br: Barra de Identidade ",
+      description=".gov.br: Barra de Identidade ",
       long_description=long_description,
       classifiers=[
           'Development Status :: 5 - Production/Stable',
