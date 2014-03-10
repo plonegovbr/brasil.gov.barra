@@ -13,7 +13,7 @@
         profile="brasil.gov.barra:default">
 
       <gs:upgradeStep
-          title="Brasil.gov.br: Barra de identidade visual do governo"
+          title=".gov.br: Barra de identidade visual do governo"
           description="Instalacao inicial da Barra de Identidade"
           handler=".handler.setup"
           />
