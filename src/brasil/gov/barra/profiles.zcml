@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="brasil.gov.vcge">
+
+	<gs:registerProfile
+	     name="default"
+	     title=".gov.br: Barra de identidade visual do governo"
+	     directory="profiles/default"
+	     description="Instala a barra de identidade visual do governo"
+	     provides="Products.GenericSetup.interfaces.EXTENSION"
+	     i18n:attributes="title; description"
+	     />
+
+	<gs:registerProfile
+	     name="uninstall"
+	     title=".gov.br: Barra de identidade visual do governo (Remover)"
+	     directory="profiles/uninstall"
+	     description="Remove a a barra de identidade visual do governo"
+	     provides="Products.GenericSetup.interfaces.EXTENSION"
+	     i18n:attributes="title; description"
+	     />
+
+</configure>
