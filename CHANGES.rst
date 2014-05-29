@@ -4,7 +4,8 @@ Alterações
 1.0.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Corrige o template para remover o script de dentro do div da barra (closes `#10`_)
+  [ericof]
 
 
 1.0 (2014-03-10)
@@ -32,3 +33,4 @@ Alterações
 
 
 .. _`#7`: https://github.com/plonegovbr/brasil.gov.barra/issues/7
+.. _`#10`: https://github.com/plonegovbr/brasil.gov.barra/issues/10

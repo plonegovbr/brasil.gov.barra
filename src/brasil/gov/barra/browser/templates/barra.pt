@@ -1,5 +1,6 @@
 <metal:barra xmlns:tal="http://xml.zope.org/namespaces/tal"
 			 xmlns:metal="http://xml.zope.org/namespaces/metal">
+<metal:local tal:condition="view/local">
 <div id="barra-brasil"  tal:condition="view/local">
     <div id="wrapper-barra-brasil">
         <div class="brasil-flag">
@@ -16,9 +17,12 @@
         </ul>
     </div>
 </div>
-<div id="barra-brasil" tal:condition="not:view/local">
+</metal:local>
+<metal:remote tal:condition="not:view/local">
+<div id="barra-brasil">
 	<a href="http://brasil.gov.br" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Portal do Governo Brasileiro</a>
-	<script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"
-    tal:attributes="src string:http://barra.brasil.gov.br/barra.js"></script>
 </div>
+<script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"
+        tal:attributes="src string:http://barra.brasil.gov.br/barra.js"></script>
+</metal:remote>
 </metal:barra>
