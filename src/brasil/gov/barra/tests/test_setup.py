@@ -85,10 +85,17 @@ class TestUpgrade(BaseTestCase):
         self._executa_atualizacao('0.0', '1000')
 
     def test_to1002_from1000(self):
-        self._executa_atualizacao('1000', '1002')
+        css_id = '++resource++brasil.gov.barra/preto.css'
         css_tool = api.portal.get_tool('portal_css')
+        css_tool.registerResource(
+            css_id,
+            enabled=1,
+            cookable=False,
+            cacheable=False
+        )
+        self._executa_atualizacao('1000', '1002')
         self.assertNotIn(
-            '++resource++brasil.gov.barra/preto.css',
+            css_id,
             css_tool.getResourceIds()
         )
 
