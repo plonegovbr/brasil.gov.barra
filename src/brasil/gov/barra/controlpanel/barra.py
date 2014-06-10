@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 """ Modulo que implementa o painel de controle da Barra de Identidade"""
 from brasil.gov.barra import MessageFactory as _
+from plone import api
 from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
@@ -14,7 +15,7 @@ from zope.schema import Bool
 
 
 class IBarraConfSchema(Interface):
-    """ Schema de configuracao da Barra de Identidade """
+    """Schema de configuracao da Barra de Identidade"""
 
     local = Bool(
         title=_(u'Usar barra local'),
@@ -40,7 +41,7 @@ class BarraControlPanelAdapter(SchemaAdapterBase):
     def __init__(self, context):
         super(BarraControlPanelAdapter, self).__init__(context)
         # Obtem a tool portal_properties
-        portal_properties = getToolByName(context, 'portal_properties')
+        portal_properties = api.portal.get_tool('portal_properties')
         # Define que o contexto a ser utilizado para o schema IBarraConfSchema
         # sera a property sheet brasil_gov
         self.context = portal_properties.brasil_gov

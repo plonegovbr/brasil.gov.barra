@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """ Modulo que implementa o(s) viewlet(s) da Barra de Identidade"""
+from plone import api
 from plone.app.layout.viewlets import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -17,7 +18,11 @@ class BarraViewlet(ViewletBase):
         super(BarraViewlet, self).update()
         # Disponibiliza uma variavel site_url que retorna a raiz do
         # site Plone. No template ela pode ser chamada como view/site_url
-        portal_state = self.portal_state
-        helper = portal_state.portal().restrictedTraverse('@@barra_helper')
+        portal = api.portal.get()
+        helper = api.content.get_view(
+            name='barra_helper',
+            context=portal,
+            request=self.request,
+        )
         self.local = helper.local
-        self.site_url = portal_state.portal_url()
+        self.site_url = portal.absolute_url()()

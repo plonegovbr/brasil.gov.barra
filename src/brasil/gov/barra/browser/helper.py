@@ -2,7 +2,7 @@
 """ Modulo que implementa uma browser view de suporte a Barra de Identidade"""
 from Acquisition import aq_inner
 from brasil.gov.barra.interfaces import IBarraHelper
-from Products.CMFCore.utils import getToolByName
+from plone import api
 from Products.Five import BrowserView
 from zope.interface import implements
 
