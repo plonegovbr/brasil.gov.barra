@@ -13,9 +13,9 @@ class IBarraInstalada(Interface):
 
 
 class IBarraHelper(Interface):
-    """ Interface da Browser View BarraHelper
-        Os metodos definidos aqui serao acessiveis
-        diretamente na Browser View
+    """Interface da Browser View BarraHelper
+       Os metodos definidos aqui serao acessiveis
+       diretamente na Browser View
     """
     def local():
-        ''' Barra servida localmente '''
+        """Barra servida localmente"""
