@@ -58,7 +58,7 @@ Estado deste pacote
 O **brasil.gov.barra** tem testes automatizados e, a cada alteração em seu
 código os testes são executados pelo serviço Travis.
 
-O estado atual dos testes pode ser visto na imagem a seguir:
+O estado atual dos testes, cobertura dos testes e downloads pode ser visto na imagem a seguir:
 
 .. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.barra.png?branch=master
     :alt: Travis CI badge
@@ -67,3 +67,7 @@ O estado atual dos testes pode ser visto na imagem a seguir:
 .. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.barra/badge.png?branch=master
     :alt: Coveralls badge
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.barra
+
+.. image:: https://pypip.in/d/brasil.gov.barra/badge.png
+    :target: https://pypi.python.org/pypi/brasil.gov.barra/
+    :alt: Downloads
