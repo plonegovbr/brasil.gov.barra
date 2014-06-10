@@ -8,8 +8,8 @@ logger = logging.getLogger(PROJECTNAME)
 
 
 def apply_profile(context):
-    ''' Atualiza perfil para versao 1020 '''
+    """Atualiza perfil para versao 1010"""
     logger = logging.getLogger(PROJECTNAME)
-    profile = 'profile-brasil.gov.barra.upgrades.v1020:default'
+    profile = 'profile-brasil.gov.barra.upgrades.v1010:default'
     loadMigrationProfile(context, profile)
-    logger.info('Atualizado para versao 1020')
+    logger.info('Atualizado para versao 1010')

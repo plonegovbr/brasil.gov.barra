@@ -65,7 +65,7 @@ class TestUpgrade(BaseTestCase):
         # Testamos a versao do profile
         self.assertEqual(
             self.st.getLastVersionForProfile(self.profile),
-            (u'1020',)
+            (u'1010',)
         )
 
     def _executa_atualizacao(self, source, dest):
@@ -92,8 +92,8 @@ class TestUpgrade(BaseTestCase):
             css_tool.getResourceIds()
         )
 
-    def test_to1002_from1020(self):
-        self._executa_atualizacao('1002', '1020')
+    def test_to1002_from1010(self):
+        self._executa_atualizacao('1002', '1010')
         controlpanel = api.portal.get_tool('portal_controlpanel')
         with api.env.adopt_roles(['Site Administrator', ]):
             # Listamos todas as acoes do painel de controle

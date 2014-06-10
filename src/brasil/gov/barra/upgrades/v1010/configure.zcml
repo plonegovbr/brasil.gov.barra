@@ -7,20 +7,20 @@
   <!-- Profiles -->
   <gs:registerProfile
       name="default"
-      title="Identidade Digital: Versão 1020"
+      title="Identidade Digital: Versão 1010"
       directory="profiles/default"
-      description="Configurações da Versão 1020 da barra"
+      description="Configurações da Versão 1010 da barra"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
   <!-- Upgrade Steps -->
   <gs:upgradeSteps
         source="1002"
-        destination="1020"
+        destination="1010"
         profile="brasil.gov.barra:default">
 
       <gs:upgradeStep
-          title="Atualiza portal para versão 1020"
+          title="Atualiza portal para versão 1010"
           description="Ajusta permissao do painel de controle."
           handler=".handler.apply_profile"
           />

@@ -8,6 +8,6 @@
 
   <include package=".v1002" />
 
-  <include package=".v1020" />
+  <include package=".v1010" />
 
 </configure>
