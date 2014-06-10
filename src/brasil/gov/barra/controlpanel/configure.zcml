@@ -7,6 +7,15 @@
    -->
   <adapter factory=".barra.BarraControlPanelAdapter" />
 
+  <!-- Registra permissao para edicao da barra no painel de controle
+   -->
+  <permission
+      id="brasil.gov.portal.barra"
+      title="brasil.gov.portal: Configurar Barra">
+    <role name="Manager"/>
+    <role name="Site Administrator"/>
+  </permission>
+
   <!-- Registra a browser view que sera o painel de controle com o nome de
        brasil.gov.barra-config.
        apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
@@ -17,7 +26,7 @@
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     class=".barra.BarraControlPanel"
     layer="brasil.gov.barra.interfaces.IBarraInstalada"
-    permission="cmf.ManagePortal"
+    permission="brasil.gov.portal.barra"
     />
 
 </configure>
