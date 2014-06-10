@@ -4,6 +4,9 @@ Alterações
 1.0.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Uso do plone.api para rotinas internas
+  [ericof]
+
 * Corrige o template para remover o script de dentro do div da barra (closes `#10`_)
   [ericof]
 
