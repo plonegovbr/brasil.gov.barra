@@ -1,7 +1,7 @@
 Alterações
 ------------
 
-1.0.1 (unreleased)
+1.0.1 (2014-06-10)
 ^^^^^^^^^^^^^^^^^^
 
 * Uso do plone.api para rotinas internas
