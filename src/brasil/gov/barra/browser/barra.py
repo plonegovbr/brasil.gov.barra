@@ -25,4 +25,4 @@ class BarraViewlet(ViewletBase):
             request=self.request,
         )
         self.local = helper.local
-        self.site_url = portal.absolute_url()()
+        self.site_url = portal.absolute_url()
