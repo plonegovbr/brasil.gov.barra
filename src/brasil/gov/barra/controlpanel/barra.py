@@ -6,7 +6,6 @@ from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.CMFPlone.utils import getToolByName
 from zope.component import adapts
 from zope.formlib.form import FormFields
 from zope.interface import implements
