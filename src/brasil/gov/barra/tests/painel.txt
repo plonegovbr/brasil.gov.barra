@@ -1,5 +1,5 @@
 **************************************
-Brasil.gov.br: Barra de Identidade
+.gov.br: Barra de Identidade
 **************************************
 
 Teste funcional do painel de controle
