@@ -1,20 +1,16 @@
 # -*- coding:utf-8 -*-
 """ Modulo que implementa o painel de controle da Barra de Identidade"""
-from zope.schema import Bool
-from zope.component import adapts
-from zope.interface import Interface
-from zope.interface import implements
-
-from zope.formlib.form import FormFields
-
-from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.CMFPlone.utils import getToolByName
+from brasil.gov.barra import MessageFactory as _
+from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
-
-from plone.app.controlpanel.form import ControlPanelForm
-
-from brasil.gov.barra import MessageFactory as _
+from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Products.CMFPlone.utils import getToolByName
+from zope.component import adapts
+from zope.formlib.form import FormFields
+from zope.interface import implements
+from zope.interface import Interface
+from zope.schema import Bool
 
 
 class IBarraConfSchema(Interface):
@@ -32,11 +28,11 @@ class IBarraConfSchema(Interface):
 
 
 class BarraControlPanelAdapter(SchemaAdapterBase):
-    ''' Adapter para a raiz do site Plone suportar o schema
-        de configuracao da barra de identidade
-        Esta classe implementa uma maneira da raiz do site armazenar
-        as configuracoes que serao geridas pelo painel de controle
-    '''
+    """Adapter para a raiz do site Plone suportar o schema
+       de configuracao da barra de identidade
+       Esta classe implementa uma maneira da raiz do site armazenar
+       as configuracoes que serao geridas pelo painel de controle
+    """
 
     adapts(IPloneSiteRoot)
     implements(IBarraConfSchema)
@@ -55,7 +51,7 @@ class BarraControlPanelAdapter(SchemaAdapterBase):
 
 
 class BarraControlPanel(ControlPanelForm):
-    ''' Implementacao do painel de controle da Barra de Identidade '''
+    """Implementacao do painel de controle da Barra de Identidade"""
     # Define quais serao os campos a serem exibidos (IBarraConfSchema)
     form_fields = FormFields(IBarraConfSchema)
 
