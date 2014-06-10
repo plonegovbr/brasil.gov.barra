@@ -39,6 +39,7 @@ setup(name='brasil.gov.barra',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+          'plone.api',
           'Products.CMFPlone >=4.2',
           'setuptools',
       ],
