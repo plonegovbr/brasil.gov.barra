@@ -1,5 +1,6 @@
 <metal:barra xmlns:tal="http://xml.zope.org/namespaces/tal"
 			 xmlns:metal="http://xml.zope.org/namespaces/metal">
+<div id="barra-identidade">
 <metal:local tal:condition="view/local">
 <div id="barra-brasil"  tal:condition="view/local">
     <div id="wrapper-barra-brasil">
@@ -25,4 +26,5 @@
 <script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"
         tal:attributes="src string:http://barra.brasil.gov.br/barra.js"></script>
 </metal:remote>
+</div>
 </metal:barra>

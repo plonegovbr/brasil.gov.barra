@@ -1,10 +1,11 @@
-Alterações
-------------
+Histórico de Alterações
+------------------------
 
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Englobamos a barra com um div com id barra-identidade, que engloba também o javascript
+   [ericof]
 
 
 1.0.1 (2014-06-10)
