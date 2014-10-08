@@ -4,7 +4,8 @@ Histórico de Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Adição dos atributos de defer e async para a chamada no javascript da barra
+  [caduvieira]
 
 
 1.0.2 (2014-06-11)
