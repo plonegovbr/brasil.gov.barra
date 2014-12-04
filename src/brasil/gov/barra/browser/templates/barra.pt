@@ -24,7 +24,7 @@
 	<a href="http://brasil.gov.br" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Portal do Governo Brasileiro</a>
 </div>
 <script src="http://barra.brasil.gov.br/barra.js?cor=cinza" type="text/javascript"
-        tal:attributes="src string:http://barra.brasil.gov.br/barra.js; defer string:defer; async string:async"></script>
+        tal:attributes="src string:http://barra.brasil.gov.br/barra.js" defer async></script>
 </metal:remote>
 </div>
 </metal:barra>

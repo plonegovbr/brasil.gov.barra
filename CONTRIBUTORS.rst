@@ -17,3 +17,5 @@ Contribuidores
 
 * Rodrigo Souza [rodfersou]
 
+* Carlos Vieira [caduvieira]
+
