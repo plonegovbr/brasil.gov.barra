@@ -1,7 +1,7 @@
 Histórico de Alterações
 ------------------------
 
-1.0.3 (unreleased)
+1.0.3 (2014-12-05)
 ^^^^^^^^^^^^^^^^^^
 
 * Adição dos atributos de defer e async para a chamada no javascript da barra
