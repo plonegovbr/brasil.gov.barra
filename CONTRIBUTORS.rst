@@ -11,6 +11,8 @@ Contribuidores
 
 * Érico Andrei [ericof] -- Implementação inicial em Plone
 
+* Héctor Velarde [hvelarde]
+
 * André Nogueira [agnogueira] -- Ajustes de estilos
 
 * Felipe Duardo [felipeduardo]
@@ -18,4 +20,3 @@ Contribuidores
 * Rodrigo Souza [rodfersou]
 
 * Carlos Vieira [caduvieira]
-
