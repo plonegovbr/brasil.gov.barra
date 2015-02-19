@@ -4,7 +4,8 @@ Histórico de Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Remoção do protocolo no script para herdar o protocolo (HTTP ou HTTPS)
+  [caduvieira]
 
 
 1.0.3 (2014-12-05)
