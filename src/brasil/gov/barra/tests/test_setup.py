@@ -77,8 +77,7 @@ class TestUpgrade(BaseTestCase):
         else:
             source = (source, )
         step = [step for step in upgradeSteps[0]
-                if (step['dest'] == (dest,))
-                and (step['source'] == source)][0]
+                if (step['dest'] == (dest,)) and (step['source'] == source)][0]
         step.get('step').doStep(self.st)
 
     def test_to1000_from0(self):
