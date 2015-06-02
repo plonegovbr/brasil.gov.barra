@@ -21,7 +21,7 @@ Histórico de Alterações
 ^^^^^^^^^^^^^^^^^^
 
 * Englobamos a barra com um div com id barra-identidade, que engloba também o javascript
-   [ericof]
+  [ericof]
 
 
 1.0.1 (2014-06-10)
