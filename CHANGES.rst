@@ -6,6 +6,7 @@ Histórico de Alterações
 
 * Remoção do protocolo no script para herdar o protocolo (HTTP ou HTTPS)
   [caduvieira]
+
 * Remoção do atributo async pois pode causar erro ao executar o script antes do render da página. Obrigado @dadlo. [caduvieira]
 
 
