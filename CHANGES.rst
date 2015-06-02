@@ -4,10 +4,10 @@ Histórico de Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+* Remoção do atributo async pois pode causar erro ao executar o script antes do render da página. Obrigado @dadlo. [caduvieira]
+
 * Remoção do protocolo no script para herdar o protocolo (HTTP ou HTTPS)
   [caduvieira]
-
-* Remoção do atributo async pois pode causar erro ao executar o script antes do render da página. Obrigado @dadlo. [caduvieira]
 
 
 1.0.3 (2014-12-05)
