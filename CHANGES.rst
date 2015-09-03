@@ -1,7 +1,7 @@
 Histórico de Alterações
 ------------------------
 
-1.0.4 (unreleased)
+1.0.4 (2015-09-03)
 ^^^^^^^^^^^^^^^^^^
 
 * Remoção do atributo async pois pode causar erro ao executar o script antes do render da página. Obrigado @dadlo. [caduvieira]
