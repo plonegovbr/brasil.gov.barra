@@ -60,14 +60,11 @@ código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes, cobertura dos testes e downloads pode ser visto na imagem a seguir:
 
-.. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.barra.png?branch=master
-    :alt: Travis CI badge
+.. image:: http://img.shields.io/pypi/v/brasil.gov.barra.svg
+    :target: https://pypi.python.org/pypi/brasil.gov.barra
+
+.. image:: https://img.shields.io/travis/plonegovbr/brasil.gov.barra/master.svg
     :target: http://travis-ci.org/plonegovbr/brasil.gov.barra
 
-.. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.barra/badge.png?branch=master
-    :alt: Coveralls badge
+.. image:: https://img.shields.io/coveralls/plonegovbr/brasil.gov.barra/master.svg
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.barra
-
-.. image:: https://pypip.in/d/brasil.gov.barra/badge.png
-    :target: https://pypi.python.org/pypi/brasil.gov.barra/
-    :alt: Downloads
