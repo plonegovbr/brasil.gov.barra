@@ -99,8 +99,8 @@ E somos informados que as alterações foram salvas::
           esta configurado para agrupar os arquivos. Com isto, a
           url final do arquivo de estilos e gerada a cada alteracao.
 
-Até o momento utilizamos apenas a versão local da barra -- ou seja, 
-hospedada em nosso próprio portal. Agora usaremos a versão disponível 
+Até o momento utilizamos apenas a versão local da barra -- ou seja,
+hospedada em nosso próprio portal. Agora usaremos a versão disponível
 em http://barra.brasil.gov.br.
 
     >>> browser.getControl(name='form.local').value
@@ -108,7 +108,7 @@ em http://barra.brasil.gov.br.
 
 Ao deselecionar esta opção, a barra servida será a remota:
 
-    >>> browser.getControl(name='form.local').value = False    
+    >>> browser.getControl(name='form.local').value = False
 
 Esta alteracao so sera persistida se salvarmos este formulario::
 

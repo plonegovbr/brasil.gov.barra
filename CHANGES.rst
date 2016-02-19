@@ -4,6 +4,9 @@ Histórico de Alterações
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualização da barra local com a barra remota atual (closes `#25`_).
+  [rodfersou]
+
 - Remove dependência no unittest2; o pacote nunca foi testado nem estava listado como compatível com o Pyhton 2.6.
   [hvelarde]
 
@@ -67,3 +70,4 @@ Histórico de Alterações
 
 .. _`#7`: https://github.com/plonegovbr/brasil.gov.barra/issues/7
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.barra/issues/10
+.. _`#25`: https://github.com/plonegovbr/brasil.gov.barra/issues/25

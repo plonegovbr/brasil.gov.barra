@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.barra">
+
+    <gs:upgradeSteps
+        source="1010"
+        destination="1011"
+        profile="brasil.gov.barra:default">
+
+        <gs:upgradeStep
+            title="Fix CSS references"
+            description="Fix CSS references after static files reorganization."
+            handler=".fix_css_references"
+            />
+
+        <gs:upgradeStep
+            title="Cook CSS resources"
+            description="There were changes in the CSS files, so we need to cook the resources."
+            handler="..cook_css_resources"
+            />
+
+    </gs:upgradeSteps>
+
+</configure>

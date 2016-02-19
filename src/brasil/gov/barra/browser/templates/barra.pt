@@ -1,5 +1,5 @@
 <metal:barra xmlns:tal="http://xml.zope.org/namespaces/tal"
-			 xmlns:metal="http://xml.zope.org/namespaces/metal">
+                         xmlns:metal="http://xml.zope.org/namespaces/metal">
 <div id="barra-identidade">
 <metal:local tal:condition="view/local">
 <div id="barra-brasil"  tal:condition="view/local">
@@ -10,18 +10,20 @@
         <span class="acesso-info">
             <a href="http://brasil.gov.br/barra#acesso-informacao" class="link-barra">Acesso à informação</a>
         </span>
-        <ul class="list">
-            <li class="list-item first"><a href="http://brasil.gov.br/barra#participe" class="link-barra">Participe</a></li>
-            <li class="list-item"><a href="http://www.servicos.gov.br/" class="link-barra">Serviços</a></li>
-            <li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li>
-            <li class="list-item last last-item"><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" class="link-barra">Canais</a></li>
-        </ul>
+        <nav>
+            <ul class="list">
+                <li class="list-item first"><a href="http://brasil.gov.br/barra#participe" class="link-barra">Participe</a></li>
+                <li class="list-item"><a href="http://www.servicos.gov.br/" class="link-barra">Serviços</a></li>
+                <li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li>
+                <li class="list-item last last-item"><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" class="link-barra">Canais</a></li>
+            </ul>
+        </nav>
     </div>
 </div>
 </metal:local>
 <metal:remote tal:condition="not:view/local">
 <div id="barra-brasil">
-	<a href="http://brasil.gov.br" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Portal do Governo Brasileiro</a>
+        <a href="http://brasil.gov.br" style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white; ">Portal do Governo Brasileiro</a>
 </div>
 <script src="//barra.brasil.gov.br/barra.js" type="text/javascript"
         tal:attributes="src string://barra.brasil.gov.br/barra.js" defer></script>

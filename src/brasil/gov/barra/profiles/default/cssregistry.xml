@@ -6,7 +6,7 @@
               cookable="True" 
               enabled="on" 
               expression="python:portal.restrictedTraverse('@@barra_helper').local()" 
-              id="++resource++brasil.gov.barra/css/main.css" 
+              id="++resource++brasil.gov.barra/main.css" 
               media="all" 
               rel="stylesheet" 
               rendering="link"/>
