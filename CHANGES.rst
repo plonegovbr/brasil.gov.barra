@@ -1,7 +1,7 @@
 Histórico de Alterações
 ------------------------
 
-1.0.5 (unreleased)
+1.1 (2016-02-19)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualização da barra local com a barra remota atual (closes `#25`_).
