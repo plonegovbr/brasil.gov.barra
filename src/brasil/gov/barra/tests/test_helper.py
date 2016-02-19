@@ -4,7 +4,7 @@ from brasil.gov.barra.testing import INTEGRATION_TESTING
 from plone import api
 from zope.interface import alsoProvides
 
-import unittest2 as unittest
+import unittest as unittest
 
 
 class HelperViewTest(unittest.TestCase):
