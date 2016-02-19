@@ -4,7 +4,8 @@ Histórico de Alterações
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove dependência no unittest2; o pacote nunca foi testado nem estava listado como compatível com o Pyhton 2.6.
+  [hvelarde]
 
 
 1.0.4 (2015-09-03)
