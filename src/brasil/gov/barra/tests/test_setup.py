@@ -45,7 +45,7 @@ class TestInstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = api.portal.get_tool('portal_css')
-        css_barra = "++resource++brasil.gov.barra/css/main.css"
+        css_barra = "++resource++brasil.gov.barra/main.css"
         self.assertTrue(css_barra in portal_css.getResourceIds(),
                         '%s not installed' % css_barra)
 
@@ -65,7 +65,7 @@ class TestUpgrade(BaseTestCase):
         # Testamos a versao do profile
         self.assertEqual(
             self.st.getLastVersionForProfile(self.profile),
-            (u'1010',)
+            (u'1011',)
         )
 
     def _executa_atualizacao(self, source, dest):
@@ -124,6 +124,6 @@ class TestUninstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = self.portal.portal_css
-        css_barra = "++resource++brasil.gov.barra/css/main.css"
+        css_barra = "++resource++brasil.gov.barra/main.css"
         self.assertTrue(css_barra not in portal_css.getResourceIds(),
                         '%s installed' % css_barra)

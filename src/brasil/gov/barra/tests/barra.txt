@@ -19,7 +19,7 @@ Inicialmente definimos variaveis a serem utilizadas durante todo o teste::
     >>> from plone.app.testing import setRoles
     >>> from plone.testing.z2 import Browser
     >>> from plone.app.testing import TEST_USER_ID
-    >>> from plone.app.testing import TEST_USER_NAME    
+    >>> from plone.app.testing import TEST_USER_NAME
     >>> from plone.app.testing import SITE_OWNER_NAME
     >>> from plone.app.testing import SITE_OWNER_PASSWORD
 
@@ -41,7 +41,7 @@ Adiciona barra localmente
 Acesso anonimo
 ---------------------
 
-A barra deve estar visivel para todos os usuarios, inclusive os nao 
+A barra deve estar visivel para todos os usuarios, inclusive os nao
 autenticados.
 
 Como usuario anonimo acessamos a raiz do site

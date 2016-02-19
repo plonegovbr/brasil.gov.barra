@@ -1,0 +1,273 @@
+@charset 'UTF-8';
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* Css reset mínimo */
+#barra-brasil div,
+#barra-brasil a,
+#barra-brasil ul,
+#barra-brasil li
+{
+    font-family: inherit;
+    font-size: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    vertical-align: baseline;
+}
+
+#barra-brasil ul
+{
+    list-style: none;
+}
+
+/* Css específico */
+/*   web font   */
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-style: normal;
+
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('++resource++brasil.gov.barra/opensans-bold.woff') format('woff');
+}
+/*  fim da web font   */
+#barra-brasil
+{
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+
+    box-sizing: content-box;
+    height: 32px;
+
+    border-bottom: 1px solid #dfdfdf;
+    background: #f1f1f1;
+}
+#barra-brasil a
+{
+    text-decoration: none;
+}
+
+body.contraste #barra-brasil
+{
+    background: #000 !important;
+}
+
+div#wrapper-barra-brasil
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#barra-brasil .brasil-flag
+{
+    float: left;
+
+    width: 115px;
+    height: 19px;
+    padding: 7px 0 6px;
+
+    border-right: 2px solid #dfdfdf;
+}
+
+#barra-brasil .brasil-flag .link-barra
+{
+    line-height: 19px;
+
+    display: block;
+
+    width: 43px;
+    padding-left: 42px;
+
+    text-transform: uppercase;
+
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIxOSIgdmlld0JveD0iMCAwIDEwMDAwMCA3MDAwMCI+PHBhdGggZmlsbD0iIzAwOTIzRiIgZD0iTTAgMGgxMDAwMDB2NzAwMDBIMHoiLz48cGF0aCBmaWxsPSIjRjhDMzAwIiBkPSJNNTAwMDAgODUwMEw4NTAwIDM1MDAwbDQxNTAwIDI2NTAwIDQxNTAwLTI2NTAwTDUwMDAwIDg1MDB6Ii8+PGNpcmNsZSBmaWxsPSIjMjgxNjZGIiBjeD0iNDk5NjMiIGN5PSIzNTAwMCIgcj0iMTc0NjQiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMzk1MzcgMjk2MDVjMTAzODggMCAxOTkxMSAzODIxIDI3MjM4IDEwMTI3IDI0Mi04NTAgNDIxLTE3MjYgNTMyLTI2MjItNzU5Ny02MTYyLTE3MjY1LTk4NjItMjc3NzAtOTg2Mi0xODIxIDAtMzYxNyAxMTQtNTM4MiAzMzAtMzc3IDgwNS02OTUgMTY0Mi05NDggMjUwNyAyMDY1LTMxNiA0MTc5LTQ4MCA2MzMwLTQ4MHoiLz48L3N2Zz4K') 8px center no-repeat;
+}
+
+#barra-brasil .acesso-info
+{
+    position: absolute;
+    left: 130px;
+}
+
+#barra-brasil .list
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#barra-brasil .list .first
+{
+    border-left: 2px solid #dfdfdf;
+}
+
+#barra-brasil .list-item
+{
+    line-height: 32px;
+
+    display: inline-block;
+
+    height: 32px;
+
+    border-right: 2px solid #dfdfdf;
+}
+#barra-brasil .list-item a
+{
+    padding: 8px 15px 8px 13px;
+}
+
+#barra-brasil .link-barra
+{
+    color: #606060;
+}
+
+body.contraste #barra-brasil .link-barra
+{
+    text-decoration: underline;
+
+    color: #ff0 !important;
+}
+
+#menu-icon
+{
+    position: absolute;
+    top: 3px;
+    right: 5px;
+
+    display: none;
+
+    width: 20px;
+
+    border-top: 15px double #606060;
+    border-bottom: 5px solid #606060;
+}
+
+@media only screen and (max-width: 959px)
+{
+    #barra-brasil #menu-icon
+    {
+        display: inline-block;
+
+        padding: 5px 3px 0 3px;
+    }
+
+    #barra-brasil .list .first
+    {
+        border-left: 1px solid #dfdfdf;
+    }
+
+    #barra-brasil nav:hover #menu-icon,
+    #barra-brasil nav:active #menu-icon,
+    #barra-brasil nav:focus #menu-icon
+    {
+        background-color: #ddd;
+    }
+
+    body.contraste #barra-brasil nav:hover #menu-icon,
+    body.contraste #barra-brasil nav:active #menu-icon,
+    body.contraste #barra-brasil nav:focus #menu-icon
+    {
+        background-color: #606060 !important;
+    }
+
+    #barra-brasil ul.list,
+    #barra-brasil ul.list:active,
+    #barra-brasil ul.list:focus
+    {
+        position: absolute;
+        z-index: 9;
+
+        overflow: hidden;
+
+        width: auto;
+        height: 0;
+        padding-top: 32px;
+
+        transition: .3s;
+    }
+
+    #barra-brasil .list-item
+    {
+        display: block;
+
+        height: 30px;
+
+        text-align: center;
+
+        border: 1px solid #dfdfdf;
+        background: #eee;
+    }
+    #barra-brasil .list-item a
+    {
+        padding: 8px 30px 8px 28px;
+    }
+
+    body.contraste #barra-brasil .list-item
+    {
+        background: #000 !important;
+    }
+
+    body.contraste #menu-icon
+    {
+        border-top: 15px double #fff !important;
+        border-bottom: 5px solid #fff !important;
+    }
+
+    #barra-brasil .list a:active li,
+    #barra-brasil .list a:focus li,
+    #barra-brasil .list a:hover li
+    {
+        background: #ddd;
+    }
+
+    body.contraste #barra-brasil .list a:active li,
+    body.contraste #barra-brasil .list a:focus li,
+    body.contraste #barra-brasil .list a:hover li
+    {
+        background: #606060 !important;
+    }
+
+    #barra-brasil nav:active ul.list,
+    #barra-brasil nav:focus ul.list,
+    #barra-brasil nav:hover ul.list
+    {
+        height: 150px;
+
+        transition: .5s;
+    }
+
+    div#wrapper-barra-brasil
+    {
+        overflow: visible;
+    }
+}
+@media screen and (min-width: 960px)
+{
+    #wrapper-barra-brasil
+    {
+        width: 960px;
+    }
+}
+@media print
+{
+    #barra-brasil .list
+    {
+        display: none;
+    }
+
+    #barra-brasil .acesso-info .link-barra:after
+    {
+        content: ' - Barra GovBr';
+    }
+}
