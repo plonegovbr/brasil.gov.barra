@@ -1,7 +1,7 @@
 Histórico de Alterações
 ------------------------
 
-1.1.1 (unreleased)
+1.1.1 (2016-07-06)
 ^^^^^^^^^^^^^^^^^^
 
 - Remove ``@charset 'UTF-8'`` do CSS local para evitar erros de validação;
