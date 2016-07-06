@@ -1,11 +1,7 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="brasil.gov.barra">
-
+<configure xmlns="http://namespaces.zope.org/zope">
   <include package=".v1000" />
   <include package=".v1002" />
   <include package=".v1010" />
   <include package=".v1011" />
-
+  <include package=".v1012" />
 </configure>
