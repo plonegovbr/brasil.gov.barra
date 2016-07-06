@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.barra">
+
+  <genericsetup:upgradeSteps
+      source="1011"
+      destination="1012"
+      profile="brasil.gov.barra:default">
+
+    <genericsetup:upgradeStep
+        title="Cook CSS resources"
+        description="There were changes in the CSS files, so we need to cook the resources."
+        handler="..cook_css_resources"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>

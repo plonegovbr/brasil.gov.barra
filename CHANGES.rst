@@ -4,7 +4,9 @@ Histórico de Alterações
 1.1.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove ``@charset 'UTF-8'`` do CSS local para evitar erros de validação;
+  o arquivo CSS sempre vai ser entregado usando a codificação certa dentro do Plone.
+  [hvelarde]
 
 
 1.1 (2016-02-19)
