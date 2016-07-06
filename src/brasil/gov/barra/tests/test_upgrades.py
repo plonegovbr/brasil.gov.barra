@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.barra.testing import INTEGRATION_TESTING
-from plone import api
 
 import unittest
 
