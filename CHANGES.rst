@@ -4,7 +4,8 @@ Histórico de Alterações
 1.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adiciona icone da bandeira do Brasil para o configlet do painel de controle.
+  [hvelarde]
 
 
 1.1.1 (2016-07-06)
