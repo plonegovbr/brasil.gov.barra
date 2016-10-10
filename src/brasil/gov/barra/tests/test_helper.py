@@ -27,7 +27,7 @@ class HelperViewTest(unittest.TestCase):
             request=self.portal.REQUEST,
         )
         view = view.__of__(self.portal)
-        self.failUnless(view)
+        self.assertTrue(view)
 
     def test_helper_view_local(self):
         """Uso do metodo local"""

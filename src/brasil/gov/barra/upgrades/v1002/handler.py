@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.barra.config import PROJECTNAME
+from plone import api
 from plone.app.upgrade.utils import loadMigrationProfile
-from Products.CMFCore.utils import getToolByName
 
 import logging
 
@@ -18,7 +18,7 @@ def unregister_old_css(context):
         '++resource++brasil.gov.barra/cinza.css',
         '++resource++brasil.gov.barra/preto.css'
     ]
-    css_tool = getToolByName(context, 'portal_css')
+    css_tool = api.portal.get_tool('portal_css')
     for css in CSS_TO_REMOVE:
         if css in css_tool.getResourceIds():
             css_tool.unregisterResource(css)

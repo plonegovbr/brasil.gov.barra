@@ -4,7 +4,7 @@
     xmlns:gs="http://namespaces.zope.org/genericsetup"
     i18n_domain="brasil.gov.barra">
 
-  
+
   <!-- Upgrade Steps -->
   <gs:upgradeSteps
         source="0.0"

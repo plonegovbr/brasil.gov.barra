@@ -25,6 +25,7 @@ install:
   # se o job for o 4.2, 5.0  ou o que tem que pegar do master.
   - test "$MASTER" -o "$PLONE_VERSION" = 4.2 -o "$PLONE_VERSION" = 5.0 && sed -ie '/https:\/\/raw\.githubusercontent\.com\/plonegovbr\/portal\.buildout\/master\/buildout\.d\/versions\.cfg/d' buildout.cfg || true
   - sed -ie "s#test-4.3#test-$PLONE_VERSION#" buildout.cfg
+  - python bootstrap.py
   - bin/buildout annotate
   - bin/buildout
 before_script:

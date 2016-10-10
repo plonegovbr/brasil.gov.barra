@@ -7,7 +7,7 @@
     i18n_domain="brasil.gov.barra">
 
     <includeDependencies package="." />
-	<include zcml:condition="have plone-4" package="Products.CMFCore" file="permissions.zcml" />
+    <include zcml:condition="have plone-4" package="Products.CMFCore" file="permissions.zcml" />
 
     <include package=".browser" />
     <include package=".controlpanel" />
@@ -23,7 +23,7 @@
         name="brasil.gov.barra"
         directory="static"
         />
- 
+
     <!-- Oculta products -->
     <utility
         factory=".config.HiddenProducts"
