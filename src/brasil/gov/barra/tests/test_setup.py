@@ -37,7 +37,7 @@ class TestInstall(BaseTestCase):
 
     def test_installed(self):
         self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
-                        '%s not installed' % PROJECTNAME)
+                        '{0} not installed'.format(PROJECTNAME))
 
     def test_browserlayer(self):
         from brasil.gov.barra.interfaces import IBarraInstalada
@@ -45,15 +45,15 @@ class TestInstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = api.portal.get_tool('portal_css')
-        css_barra = "++resource++brasil.gov.barra/main.css"
+        css_barra = '++resource++brasil.gov.barra/main.css'
         self.assertTrue(css_barra in portal_css.getResourceIds(),
-                        '%s not installed' % css_barra)
+                        '{0} not installed'.format(css_barra))
 
     def test_default_configuration(self):
         pp = api.portal.get_tool('portal_properties')
         sheet = getattr(pp, 'brasil_gov', None)
         self.assertTrue(sheet is not None)
-        self.assertFalse(sheet.getProperty("local"))
+        self.assertFalse(sheet.getProperty('local'))
 
 
 class TestUpgrade(BaseTestCase):
@@ -105,7 +105,7 @@ class TestUpgrade(BaseTestCase):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado
-            self.failUnless('barra-config' in installed)
+            self.assertTrue('barra-config' in installed)
 
 
 class TestUninstall(BaseTestCase):
@@ -124,6 +124,6 @@ class TestUninstall(BaseTestCase):
 
     def test_cssregistry(self):
         portal_css = self.portal.portal_css
-        css_barra = "++resource++brasil.gov.barra/main.css"
+        css_barra = '++resource++brasil.gov.barra/main.css'
         self.assertTrue(css_barra not in portal_css.getResourceIds(),
-                        '%s installed' % css_barra)
+                        '{0} installed'.format(css_barra))

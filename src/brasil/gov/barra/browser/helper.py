@@ -4,13 +4,12 @@ from Acquisition import aq_inner
 from brasil.gov.barra.interfaces import IBarraHelper
 from plone import api
 from Products.Five import BrowserView
-from zope.interface import implements
+from zope.interface import implementer
 
 
+@implementer(IBarraHelper)
 class BarraHelper(BrowserView):
     """Browser view que retorna as configuracoes da Barra de Identidade"""
-
-    implements(IBarraHelper)
 
     def __init__(self, context, request, *args, **kwargs):
         """Inicializacao da browser view

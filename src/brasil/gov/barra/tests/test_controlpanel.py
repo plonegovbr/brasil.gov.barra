@@ -26,7 +26,7 @@ class ControlPanelTest(unittest.TestCase):
             request=self.portal.REQUEST,
         )
         view = view.__of__(self.portal)
-        self.failUnless(view())
+        self.assertTrue(view())
 
     def test_controlpanel_configlet(self):
         """Acesso a view nao pode ser feito por usuario anonimo"""
@@ -36,12 +36,12 @@ class ControlPanelTest(unittest.TestCase):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado
-            self.failUnless('barra-config' in installed)
+            self.assertTrue('barra-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
         with api.env.adopt_roles(['Anonymous', ]):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
-            self.failIf('barra-config' in installed)
+            self.assertFalse('barra-config' in installed)
 
     def test_controlpanel_view_protected(self):
         """Acesso a view nao pode ser feito por usuario anonimo"""
@@ -61,4 +61,4 @@ class ControlPanelTest(unittest.TestCase):
         installed = [a.getAction(self)['id']
                      for a in controlpanel.listActions()]
         # Validamos que o painel de controle da barra esteja instalado
-        self.failUnless('barra-config' in installed)
+        self.assertTrue('barra-config' in installed)

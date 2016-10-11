@@ -7,7 +7,7 @@
        para o viewlet manager
        plone.app.layout.viewlets.interfaces.IPortalTop
        apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
-       estiver disponivel.       
+       estiver disponivel.
    -->
   <browser:viewlet
       name="brasil.gov.barra"
@@ -29,5 +29,5 @@
       layer="brasil.gov.barra.interfaces.IBarraInstalada"
       permission="zope.Public"
       />
-    
+
 </configure>

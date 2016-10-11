@@ -6,9 +6,9 @@ from plone.app.controlpanel.form import ControlPanelForm
 from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from zope.component import adapts
+from zope.component import adapter
 from zope.formlib.form import FormFields
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema import Bool
 
@@ -19,23 +19,22 @@ class IBarraConfSchema(Interface):
     local = Bool(
         title=_(u'Usar barra local'),
         description=_(u'help_barra_local',
-                      default=u"Devemos servir esta barra a partir "
-                              u"deste site ou utilizar a versão "
-                              u"disponível em barra.brasil.gov.br?"),
+                      default=u'Devemos servir esta barra a partir '
+                              u'deste site ou utilizar a versão '
+                              u'disponível em barra.brasil.gov.br?'),
         required=False,
         default=True,
     )
 
 
+@adapter(IPloneSiteRoot)
+@implementer(IBarraConfSchema)
 class BarraControlPanelAdapter(SchemaAdapterBase):
     """Adapter para a raiz do site Plone suportar o schema
        de configuracao da barra de identidade
        Esta classe implementa uma maneira da raiz do site armazenar
        as configuracoes que serao geridas pelo painel de controle
     """
-
-    adapts(IPloneSiteRoot)
-    implements(IBarraConfSchema)
 
     def __init__(self, context):
         super(BarraControlPanelAdapter, self).__init__(context)
