@@ -3,12 +3,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="brasil.gov.barra">
 
-  <!-- Registra o viewlet da barra com nome de brasil.gov.barra
-       para o viewlet manager
-       plone.app.layout.viewlets.interfaces.IPortalTop
-       apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
-       estiver disponivel.
-   -->
+  <!--Contém o código html, no topo do site, informando caso não tenha conseguido-->
+  <!--carregar a barra. É recomendado ficar logo após a abertura da tag <body>.-->
   <browser:viewlet
       name="brasil.gov.barra"
       manager="plone.app.layout.viewlets.interfaces.IPortalTop"
@@ -17,10 +13,16 @@
       permission="zope.Public"
       />
 
-  <!-- Registra a browser view BarraHelper com nome de barra_helper
-       apenas se o layer brasil.gov.barra.interfaces.IBarraInstalada
-       estiver disponivel.
-   -->
+  <!--Contém a tag script que chama a barra javascript externa. É recomendado-->
+  <!--ser colocado antes do fechamento da tag body.-->
+  <browser:viewlet
+      name="brasil.gov.barra.js"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".barra_js.BarraViewlet"
+      layer="brasil.gov.barra.interfaces.IBarraInstalada"
+      permission="zope.Public"
+      />
+
   <browser:page
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       name="barra_helper"
