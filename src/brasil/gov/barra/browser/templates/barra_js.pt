@@ -1,3 +1,11 @@
+<metal:barra xmlns:tal="http://xml.zope.org/namespaces/tal"
+                         xmlns:metal="http://xml.zope.org/namespaces/metal">
 <div id="barra_brasil_js">
+    <metal:local tal:condition="view/local">
+    <script defer="defer" src="++resource++brasil.gov.barra/barra.js" type="text/javascript"></script>
+    </metal:local>
+    <metal:remote tal:condition="not:view/local">
     <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+    </metal:remote>
 </div>
+</metal:barra>
