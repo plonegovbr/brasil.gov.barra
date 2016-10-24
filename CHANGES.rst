@@ -4,6 +4,11 @@ Histórico de Alterações
 1.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Barra agora é chamada no fim da tag body; Mostra mensagem html, como no
+  padrão estabelecido pelo Ministério do Planejamento, se o javascript não
+  puder ser carregado (closes `#12`_).
+  [idgserpro]
+
 - Adiciona icone da bandeira do Brasil para o configlet do painel de controle.
   [hvelarde]
 
@@ -85,4 +90,5 @@ Histórico de Alterações
 
 .. _`#7`: https://github.com/plonegovbr/brasil.gov.barra/issues/7
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.barra/issues/10
+.. _`#12`: https://github.com/plonegovbr/brasil.gov.barra/issues/12
 .. _`#25`: https://github.com/plonegovbr/brasil.gov.barra/issues/25
