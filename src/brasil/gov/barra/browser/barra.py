@@ -5,19 +5,20 @@ from plone.app.layout.viewlets import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
-class BarraViewlet(ViewletBase):
-    """Implementacao do viewlet da Barra de Identidade do Governo
-       Este viewlet eh registrado como no arquivo browser/configure.zcml
-       e habilitado no arquivo profiles/default/viewlets.xml
+class BarraViewletJs(ViewletBase):
+    """
+    Viewlet que faz a chamada para o javascript da barra do Ministério do
+    Planejamento.
+
+    Se o usuário marcar a opção para usar barra local, utiliza um barra.js que
+    está no pacote.
     """
     # Indica qual o template sera usado por este viewlet
-    index = ViewPageTemplateFile('templates/barra.pt')
+    index = ViewPageTemplateFile('templates/barra_js.pt')
 
     def update(self):
         """Prepara/Atualiza os valores utilizados pelo Viewlet"""
-        super(BarraViewlet, self).update()
-        # Disponibiliza uma variavel site_url que retorna a raiz do
-        # site Plone. No template ela pode ser chamada como view/site_url
+        super(BarraViewletJs, self).update()
         portal = api.portal.get()
         helper = api.content.get_view(
             name='barra_helper',
@@ -25,4 +26,3 @@ class BarraViewlet(ViewletBase):
             request=self.request,
         )
         self.local = helper.local
-        self.site_url = portal.absolute_url()

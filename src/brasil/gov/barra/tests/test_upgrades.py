@@ -47,3 +47,14 @@ class To1012TestCase(UpgradeTestCaseBase):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
         self.assertGreaterEqual(version, self.to_version)
         self.assertEqual(self.total_steps, 1)
+
+
+class To1013TestCase(UpgradeTestCaseBase):
+
+    def setUp(self):
+        UpgradeTestCaseBase.setUp(self, u'1012', u'1013')
+
+    def test_registrations(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertGreaterEqual(version, self.to_version)
+        self.assertEqual(self.total_steps, 1)

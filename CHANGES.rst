@@ -4,6 +4,11 @@ Histórico de Alterações
 1.1.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Barra local passa a ser o barra.js mas agora dentro do pacote. Foi feita uma
+  estrutura na lógica de testes que avisa se a versão do pacote estiver
+  desatualizada com relação à barra externa. (closes `#30`_).
+  [idgserpro]
+
 - Barra agora é chamada no fim da tag body; Mostra mensagem html, como no
   padrão estabelecido pelo Ministério do Planejamento, se o javascript não
   puder ser carregado (closes `#12`_).
@@ -92,3 +97,4 @@ Histórico de Alterações
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.barra/issues/10
 .. _`#12`: https://github.com/plonegovbr/brasil.gov.barra/issues/12
 .. _`#25`: https://github.com/plonegovbr/brasil.gov.barra/issues/25
+.. _`#30`: https://github.com/plonegovbr/brasil.gov.barra/issues/30

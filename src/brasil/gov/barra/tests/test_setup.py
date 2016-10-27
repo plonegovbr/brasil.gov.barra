@@ -43,12 +43,6 @@ class TestInstall(BaseTestCase):
         from brasil.gov.barra.interfaces import IBarraInstalada
         self.assertTrue(IBarraInstalada in registered_layers())
 
-    def test_cssregistry(self):
-        portal_css = api.portal.get_tool('portal_css')
-        css_barra = '++resource++brasil.gov.barra/main.css'
-        self.assertTrue(css_barra in portal_css.getResourceIds(),
-                        '{0} not installed'.format(css_barra))
-
     def test_default_configuration(self):
         pp = api.portal.get_tool('portal_properties')
         sheet = getattr(pp, 'brasil_gov', None)
@@ -65,7 +59,7 @@ class TestUpgrade(BaseTestCase):
         # Testamos a versao do profile
         self.assertEqual(
             self.st.getLastVersionForProfile(self.profile),
-            (u'1012',)
+            (u'1013',)
         )
 
     def _executa_atualizacao(self, source, dest):
@@ -107,6 +101,13 @@ class TestUpgrade(BaseTestCase):
             # Validamos que o painel de controle da barra esteja instalado
             self.assertTrue('barra-config' in installed)
 
+    def test_to1013_from1012(self):
+        self._executa_atualizacao('1012', '1013')
+        portal_css = self.portal.portal_css
+        css_barra = '++resource++brasil.gov.barra/main.css'
+        self.assertTrue(css_barra not in portal_css.getResourceIds(),
+                        '{0} installed'.format(css_barra))
+
 
 class TestUninstall(BaseTestCase):
     """ensure product is properly uninstalled"""
@@ -121,9 +122,3 @@ class TestUninstall(BaseTestCase):
     def test_browserlayer(self):
         from brasil.gov.barra.interfaces import IBarraInstalada
         self.assertTrue(IBarraInstalada not in registered_layers())
-
-    def test_cssregistry(self):
-        portal_css = self.portal.portal_css
-        css_barra = '++resource++brasil.gov.barra/main.css'
-        self.assertTrue(css_barra not in portal_css.getResourceIds(),
-                        '{0} installed'.format(css_barra))

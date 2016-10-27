@@ -48,16 +48,9 @@ Como usuario anonimo acessamos a raiz do site
 
     >>> browser.open(portalURL)
 
-No conteudo da pagina retornado temos que validar a existencia de alguns
-elementos, comecando pelos links da barra, verificando a existência do link do
-Portal Brasil.gov.br::
+Validamos que a chamada da barra local foi inserida corretamente::
 
-    >>> 'brasil.gov.br' in browser.contents
-    True
-
-Tambem validamos que o html da barra foi inserido corretamente::
-
-    >>> '<div id="barra-brasil">' in browser.contents
+    >>> '++resource++brasil.gov.barra/barra.js' in browser.contents
     True
 
 Acesso autenticado
@@ -78,12 +71,22 @@ as mesmas validacoes. Primeiro acessando a capa do site:
 
     >>> browser.open(portalURL)
 
-Validando os links::
+Validando o html::
 
-    >>> 'brasil.gov.br' in browser.contents
+    >>> '++resource++brasil.gov.barra/barra.js' in browser.contents
     True
 
-E tambem o html::
+Teste barra não carregada
+-------------------------
 
-    >>> '<div id="barra-brasil">' in browser.contents
+Testes funcionais nesse framework não possuem javascript: dessa forma, podemos
+testar a viewlet da barra que mostra o texto padrão quando a barra não estiver
+disponível.
+
+    >>> browser.open(portalURL)
+    >>> '<div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;">' in browser.contents
     True
+
+Por que isso é possível? Porque a barra em javascript "sobrescreve" a div
+"barra-brasil", dinamicamente, se estiver carregada. Como não temos javascript,
+a div ainda permanece nos permitindo fazer esse teste.

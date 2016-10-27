@@ -1,16 +1,23 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.barra.browser.barra import BarraViewlet
-from brasil.gov.barra.browser.barra_js import BarraViewlet as BarraViewletJs
+
+from brasil.gov.barra.browser.barra import BarraViewletJs
+from brasil.gov.barra.config import BARRA_JS_DEFAULT_LANGUAGE
+from brasil.gov.barra.config import BARRA_JS_FILE
+from brasil.gov.barra.config import BARRA_JS_STATIC_FILE_LOCATION
+from brasil.gov.barra.config import BARRA_JS_URL
 from brasil.gov.barra.interfaces import IBarraInstalada
 from brasil.gov.barra.testing import INTEGRATION_TESTING
+from filecmp import cmp
 from plone import api
+from time import time
 from zope.interface import alsoProvides
 
 import unittest as unittest
+import urllib2
 
 
 BARRA_EXTERNA_HTML = u'<script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>'
-BARRA_LOCAL_LINK_ACESSO_INFORMACAO = u'<a href="http://brasil.gov.br/barra#acesso-informacao" class="link-barra">Acesso à informação</a>'
+BARRA_LOCAL_HTML = u'<script defer="defer" src="++resource++brasil.gov.barra/barra.js" type="text/javascript"></script>'
 
 
 class HelperViewTest(unittest.TestCase):
@@ -27,13 +34,6 @@ class HelperViewTest(unittest.TestCase):
             request=self.request,
         )
         self.sheet = getattr(pp, 'brasil_gov', None)
-
-        self.barra_viewlet = BarraViewlet(
-            self.portal,
-            self.request,
-            None,
-            None
-        )
 
         self.barra_viewlet_js = BarraViewletJs(
             self.portal,
@@ -66,12 +66,8 @@ class HelperViewTest(unittest.TestCase):
         Não marcando a opção 'local', deve mostrar barra externa e não deve
         aparecer barra interna.
         """
-        self.barra_viewlet.update()
-        self.assertFalse(
-            BARRA_LOCAL_LINK_ACESSO_INFORMACAO in self.barra_viewlet.render()
-        )
-
         self.barra_viewlet_js.update()
+        self.assertFalse(BARRA_LOCAL_HTML in self.barra_viewlet_js.render())
         self.assertTrue(BARRA_EXTERNA_HTML in self.barra_viewlet_js.render())
 
     def test_helper_true_mostra_barra_local(self):
@@ -80,11 +76,35 @@ class HelperViewTest(unittest.TestCase):
         barra externa.
         """
         self.sheet.local = True
+        self.barra_viewlet_js.update()
+        self.assertTrue(BARRA_LOCAL_HTML in self.barra_viewlet_js.render())
+        self.assertFalse(BARRA_EXTERNA_HTML in self.barra_viewlet_js.render())
 
-        self.barra_viewlet.update()
-        self.assertTrue(
-            BARRA_LOCAL_LINK_ACESSO_INFORMACAO in self.barra_viewlet.render()
+    def test_js_external_mesma_versao_static(self):
+        """
+        Baixa a última versão da barra diretamente do servidor do ministério
+        do planejamento para ver se a versão da nossa pasta static é a mesma.
+
+        Se não for, avisa no teste e já indica o que tem de ser feito para
+        corrigir.
+        """
+        prevent_cache_random_string = str(time()).split('.')[0]
+        url = '{0}?v={1}'.format(BARRA_JS_URL, prevent_cache_random_string)
+        barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
+        request = urllib2.Request(
+            url,
+            headers={'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE}
         )
 
-        self.barra_viewlet_js.update()
-        self.assertFalse(BARRA_EXTERNA_HTML in self.barra_viewlet_js.render())
+        barra_js = urllib2.urlopen(request)
+
+        with open(barra_js_tmp_location, 'wb') as output:
+            output.write(barra_js.read())
+
+        iguais = cmp(barra_js_tmp_location, BARRA_JS_STATIC_FILE_LOCATION)
+
+        # Caso esse teste falhe, rode o comando
+        # wget --header="Accept-Language: {0}" http://barra.brasil.gov.br/barra.js?v=$RANDOM && mv barra.js\?v=* barra.js
+        # em seu terminal para pegar a última versão da barra para poder fazer
+        # o teste passar.
+        self.assertTrue(iguais)

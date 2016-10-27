@@ -114,7 +114,12 @@ Esta alteracao so sera persistida se salvarmos este formulario::
 
     >>> browser.getControl(name="form.actions.save").click()
 
-E o arquivo css nao deverá mais estar acessível:
+E somos informados que as alterações foram salvas::
 
-    >>> 'resourcebrasil.gov.barrapreto' in browser.contents
-    False
+    >>> 'Changes saved.' in browser.contents
+    True
+
+E a barra local não deverá mais estar acessível:
+
+    >>> '++resource++brasil.gov.barra/barra.js' not in browser.contents
+    True
