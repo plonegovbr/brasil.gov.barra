@@ -1,7 +1,7 @@
 Histórico de Alterações
 ------------------------
 
-1.1.2 (unreleased)
+1.2 (2016-11-07)
 ^^^^^^^^^^^^^^^^^^
 
 - Barra local passa a ser o barra.js mas agora dentro do pacote. Foi feita uma
