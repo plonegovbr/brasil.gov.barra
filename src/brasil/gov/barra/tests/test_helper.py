@@ -104,7 +104,7 @@ class HelperViewTest(unittest.TestCase):
         iguais = cmp(barra_js_tmp_location, BARRA_JS_STATIC_FILE_LOCATION)
 
         # Caso esse teste falhe, rode o comando
-        # wget --header="Accept-Language: {0}" http://barra.brasil.gov.br/barra.js?v=$RANDOM && mv barra.js\?v=* barra.js
+        # wget --header="Accept-Language: BARRA_JS_DEFAULT_LANGUAGE" http://barra.brasil.gov.br/barra.js?v=$RANDOM && mv barra.js\?v=* barra.js
         # em seu terminal para pegar a última versão da barra para poder fazer
-        # o teste passar.
+        # o teste passar. BARRA_JS_DEFAULT_LANGUAGE vem do config.py.
         self.assertTrue(iguais)
