@@ -10,7 +10,7 @@ logger = logging.getLogger(PROJECTNAME)
 
 
 def apply_profile(context):
-    ''' Atualiza perfil para versao 1013 '''
+    """ Atualiza perfil para versao 1013 """
     logger = logging.getLogger(PROJECTNAME)
     profile = 'profile-brasil.gov.barra.upgrades.v1013:default'
     loadMigrationProfile(context, profile)
