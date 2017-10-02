@@ -80,6 +80,8 @@ class HelperViewTest(unittest.TestCase):
         self.assertTrue(BARRA_LOCAL_HTML in self.barra_viewlet_js.render())
         self.assertFalse(BARRA_EXTERNA_HTML in self.barra_viewlet_js.render())
 
+    # FIXME: https://github.com/plonegovbr/brasil.gov.barra/issues/42
+    @unittest.expectedFailure
     def test_js_external_mesma_versao_static(self):
         """
         Baixa a última versão da barra diretamente do servidor do ministério
