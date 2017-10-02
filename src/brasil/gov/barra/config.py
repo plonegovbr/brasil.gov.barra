@@ -2,7 +2,9 @@
 from Products.CMFPlone import interfaces as plone_interfaces
 from Products.CMFQuickInstallerTool import interfaces as qi_interfaces
 from zope.interface import implementer
+
 import os
+
 
 BARRA_JS_URL = 'http://barra.brasil.gov.br/barra.js'
 BARRA_JS_FILE = BARRA_JS_URL.split('/')[-1]

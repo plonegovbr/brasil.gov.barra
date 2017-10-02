@@ -5,6 +5,7 @@ from plone.testing import layered
 import doctest
 import unittest as unittest
 
+
 optionflags = doctest.REPORT_ONLY_FIRST_FAILURE
 
 
