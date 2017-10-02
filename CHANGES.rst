@@ -4,7 +4,8 @@ Histórico de Alterações
 1.3 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza javascript da barra local (closes `#39`_).
+  [idgserpro]
 
 
 1.2 (2016-11-07)
@@ -104,3 +105,4 @@ Histórico de Alterações
 .. _`#12`: https://github.com/plonegovbr/brasil.gov.barra/issues/12
 .. _`#25`: https://github.com/plonegovbr/brasil.gov.barra/issues/25
 .. _`#30`: https://github.com/plonegovbr/brasil.gov.barra/issues/30
+.. _`#39`: https://github.com/plonegovbr/brasil.gov.barra/issues/39
