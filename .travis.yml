@@ -38,7 +38,7 @@ script:
 after_success:
   # barra, no momento, não possui testes do tipo "Robots", ao contrário dos
   # demais pacotes em plonegovbr.
-  - bin/createcoverage -t "--layer=!Robot"
+  - bin/createcoverage --output-dir=htmlcov -t "--layer=!Robot"
   - pip install coveralls
   - coveralls
 notifications:
