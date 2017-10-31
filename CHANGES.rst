@@ -1,10 +1,10 @@
 Histórico de Alterações
 ------------------------
 
-1.3 (unreleased)
-^^^^^^^^^^^^^^^^
+1.2.1 (2017-10-31)
+^^^^^^^^^^^^^^^^^^
 
-- Atualiza javascript da barra local (closes `#39`_).
+- Atualiza JavaScript da barra local (closes `#39`_).
   [idgserpro]
 
 
