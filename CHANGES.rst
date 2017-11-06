@@ -4,7 +4,8 @@ Histórico de Alterações
 1.2.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove suporte para Python 2.6 e Plone 4.2.
+  [hvelarde]
 
 
 1.2.1 (2017-10-31)
