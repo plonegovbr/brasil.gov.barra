@@ -1,10 +1,11 @@
-Histórico de Alterações
-------------------------
+Changelog
+---------
 
 1.2.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige testes da barra local.
+  [caduvieira]
 
 
 1.2.1 (2017-10-31)
