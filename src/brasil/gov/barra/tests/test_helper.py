@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+try:
+    # Python 3
+    from urllib.request import Request, urlopen
+except ImportError:
+    # Python 2
+    from urllib2 import Request, urlopen
+
 from brasil.gov.barra.browser.barra import BarraViewletJs
 from brasil.gov.barra.config import BARRA_JS_DEFAULT_LANGUAGE
 from brasil.gov.barra.config import BARRA_JS_FILE
@@ -11,7 +18,6 @@ from time import time
 from zope.component import getMultiAdapter
 
 import unittest
-import urllib2
 
 
 BARRA_EXTERNA_HTML = u'<script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>'
@@ -99,10 +105,10 @@ class HelperViewTest(unittest.TestCase):
         prevent_cache_random_string = str(time()).split('.')[0]
         url = '{0}?v={1}'.format(BARRA_JS_URL + '.' + self.language_lowercase(), prevent_cache_random_string)
         barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
-        request = urllib2.Request(
+        request = Request(
             url, headers={'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE})
 
-        barra_js = urllib2.urlopen(request)
+        barra_js = urlopen(request)
 
         with open(barra_js_tmp_location, 'wb') as output:
             output.write(barra_js.read())
