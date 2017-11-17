@@ -5,7 +5,7 @@ from plone import api
 from plone.app.testing import logout
 from zope.interface import alsoProvides
 
-import unittest as unittest
+import unittest
 
 
 class ControlPanelTest(unittest.TestCase):

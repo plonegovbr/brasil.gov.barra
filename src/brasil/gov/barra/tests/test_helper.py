@@ -13,7 +13,7 @@ from time import time
 from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 
-import unittest as unittest
+import unittest
 import urllib2
 
 

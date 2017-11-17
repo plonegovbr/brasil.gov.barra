@@ -3,7 +3,7 @@ from brasil.gov.barra.testing import FUNCTIONAL_TESTING
 from plone.testing import layered
 
 import doctest
-import unittest as unittest
+import unittest
 
 
 optionflags = doctest.REPORT_ONLY_FIRST_FAILURE
