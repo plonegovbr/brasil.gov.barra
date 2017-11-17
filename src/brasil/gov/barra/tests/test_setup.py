@@ -8,7 +8,6 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.browserlayer.utils import registered_layers
 from Products.GenericSetup.upgrade import listUpgradeSteps
-from zope.site.hooks import setSite
 
 import unittest
 
@@ -24,7 +23,6 @@ class BaseTestCase(unittest.TestCase):
 
     def setUp(self):
         portal = self.layer['portal']
-        setSite(portal)
         self.portal = portal
         self.qi = api.portal.get_tool('portal_quickinstaller')
         self.wt = api.portal.get_tool('portal_workflow')
@@ -41,12 +39,12 @@ class TestInstall(BaseTestCase):
 
     def test_browserlayer(self):
         from brasil.gov.barra.interfaces import IBarraInstalada
-        self.assertTrue(IBarraInstalada in registered_layers())
+        self.assertIn(IBarraInstalada, registered_layers())
 
     def test_default_configuration(self):
         pp = api.portal.get_tool('portal_properties')
         sheet = getattr(pp, 'brasil_gov', None)
-        self.assertTrue(sheet is not None)
+        self.assertIsNotNone(sheet)
         self.assertFalse(sheet.getProperty('local'))
 
 
@@ -88,9 +86,7 @@ class TestUpgrade(BaseTestCase):
         )
         self._executa_atualizacao('1000', '1002')
         self.assertNotIn(
-            css_id,
-            css_tool.getResourceIds()
-        )
+            css_id, css_tool.getResourceIds())
 
     def test_to1002_from1010(self):
         self._executa_atualizacao('1002', '1010')
@@ -99,14 +95,16 @@ class TestUpgrade(BaseTestCase):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado
-            self.assertTrue('barra-config' in installed)
+            self.assertIn('barra-config', installed)
 
     def test_to1013_from1012(self):
         self._executa_atualizacao('1012', '1013')
         portal_css = self.portal.portal_css
         css_barra = '++resource++brasil.gov.barra/main.css'
-        self.assertTrue(css_barra not in portal_css.getResourceIds(),
-                        '{0} installed'.format(css_barra))
+        self.assertNotIn(
+            css_barra, portal_css.getResourceIds(),
+            '{0} installed'.format(css_barra),
+        )
 
 
 class TestUninstall(BaseTestCase):
@@ -121,4 +119,4 @@ class TestUninstall(BaseTestCase):
 
     def test_browserlayer(self):
         from brasil.gov.barra.interfaces import IBarraInstalada
-        self.assertTrue(IBarraInstalada not in registered_layers())
+        self.assertNotIn(IBarraInstalada, registered_layers())

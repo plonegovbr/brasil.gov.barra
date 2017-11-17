@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
-
 from brasil.gov.barra.browser.barra import BarraViewletJs
 from brasil.gov.barra.config import BARRA_JS_DEFAULT_LANGUAGE
 from brasil.gov.barra.config import BARRA_JS_FILE
 from brasil.gov.barra.config import BARRA_JS_STATIC_FILE_LOCATION
 from brasil.gov.barra.config import BARRA_JS_URL
-from brasil.gov.barra.interfaces import IBarraInstalada
 from brasil.gov.barra.testing import INTEGRATION_TESTING
 from filecmp import cmp
 from plone import api
 from time import time
 from zope.component import getMultiAdapter
-from zope.interface import alsoProvides
 
 import unittest
 import urllib2
@@ -46,11 +43,7 @@ class HelperViewTest(unittest.TestCase):
         self.sheet = getattr(pp, 'brasil_gov', None)
 
         self.barra_viewlet_js = BarraViewletJs(
-            self.portal,
-            self.request,
-            None,
-            None
-        )
+            self.portal, self.request, None, None)
 
         # Setup site language settings
         ltool = self.portal.portal_languages
@@ -60,10 +53,6 @@ class HelperViewTest(unittest.TestCase):
                                          setUseCombinedLanguageCodes=False)
         self.ltool = ltool
         self.ltool.setLanguageBindings()
-
-        # Como nao eh um teste funcional, este objeto
-        # REQUEST precisa ser anotado com o browser layer
-        alsoProvides(self.portal.REQUEST, IBarraInstalada)
 
     def test_helper_view_registration(self):
         """ Validamos se BarraHelper esta registrada"""
@@ -86,8 +75,8 @@ class HelperViewTest(unittest.TestCase):
         aparecer barra interna.
         """
         self.barra_viewlet_js.update()
-        self.assertFalse(BARRA_LOCAL_HTML in self.barra_viewlet_js.render())
-        self.assertTrue(BARRA_EXTERNA_HTML in self.barra_viewlet_js.render())
+        self.assertNotIn(BARRA_LOCAL_HTML, self.barra_viewlet_js.render())
+        self.assertIn(BARRA_EXTERNA_HTML, self.barra_viewlet_js.render())
 
     def test_helper_true_mostra_barra_local(self):
         """
@@ -96,8 +85,8 @@ class HelperViewTest(unittest.TestCase):
         """
         self.sheet.local = True
         self.barra_viewlet_js.update()
-        self.assertTrue(BARRA_LOCAL_HTML in self.barra_viewlet_js.render())
-        self.assertFalse(BARRA_EXTERNA_HTML in self.barra_viewlet_js.render())
+        self.assertIn(BARRA_LOCAL_HTML, self.barra_viewlet_js.render())
+        self.assertNotIn(BARRA_EXTERNA_HTML, self.barra_viewlet_js.render())
 
     def test_js_external_mesma_versao_static(self):
         """
@@ -111,9 +100,7 @@ class HelperViewTest(unittest.TestCase):
         url = '{0}?v={1}'.format(BARRA_JS_URL + '.' + self.language_lowercase(), prevent_cache_random_string)
         barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
         request = urllib2.Request(
-            url,
-            headers={'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE}
-        )
+            url, headers={'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE})
 
         barra_js = urllib2.urlopen(request)
 
