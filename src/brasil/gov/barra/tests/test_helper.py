@@ -10,6 +10,7 @@ from brasil.gov.barra.testing import INTEGRATION_TESTING
 from filecmp import cmp
 from plone import api
 from time import time
+from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 
 import unittest as unittest
@@ -23,6 +24,15 @@ BARRA_LOCAL_HTML = u'<script defer="defer" src="++resource++brasil.gov.barra/bar
 class HelperViewTest(unittest.TestCase):
     """ Caso de teste da Browser View BarraHelper"""
     layer = INTEGRATION_TESTING
+
+    def language_lowercase(self):
+        """
+        @return: Two-letter string lowercase, the active language code
+        """
+        context = self.layer['portal']
+        portal_state = getMultiAdapter((context, context.REQUEST), name=u'plone_portal_state')
+        current_language = portal_state.language()
+        return current_language.lower()
 
     def setUp(self):
         self.portal = self.layer['portal']
@@ -41,6 +51,15 @@ class HelperViewTest(unittest.TestCase):
             None,
             None
         )
+
+        # Setup site language settings
+        ltool = self.portal.portal_languages
+        defaultLanguage = BARRA_JS_DEFAULT_LANGUAGE
+        supportedLanguages = [BARRA_JS_DEFAULT_LANGUAGE, 'en', 'es', 'fr']
+        ltool.manage_setLanguageSettings(defaultLanguage, supportedLanguages,
+                                         setUseCombinedLanguageCodes=False)
+        self.ltool = ltool
+        self.ltool.setLanguageBindings()
 
         # Como nao eh um teste funcional, este objeto
         # REQUEST precisa ser anotado com o browser layer
@@ -89,7 +108,7 @@ class HelperViewTest(unittest.TestCase):
         corrigir.
         """
         prevent_cache_random_string = str(time()).split('.')[0]
-        url = '{0}?v={1}'.format(BARRA_JS_URL, prevent_cache_random_string)
+        url = '{0}?v={1}'.format(BARRA_JS_URL + '.' + self.language_lowercase(), prevent_cache_random_string)
         barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
         request = urllib2.Request(
             url,
