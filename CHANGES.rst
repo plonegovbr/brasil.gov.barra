@@ -4,6 +4,9 @@ Changelog
 1.2.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Atualiza código da barra local.
+  [hvelarde]
+
 - Adiciona suporte ao Python 3.
   [caduvieira]
 
