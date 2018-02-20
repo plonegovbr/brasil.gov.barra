@@ -9,10 +9,7 @@ import os
 BARRA_JS_URL = 'http://barra.brasil.gov.br/barra.js'
 BARRA_JS_FILE = BARRA_JS_URL.split('/')[-1]
 BARRA_JS_STATIC_FILE_LOCATION = os.path.join(
-    os.path.dirname(__file__),
-    'static',
-    BARRA_JS_FILE
-)
+    os.path.dirname(__file__), 'static', BARRA_JS_FILE)
 BARRA_JS_DEFAULT_LANGUAGE = 'pt-BR'
 
 PROJECTNAME = 'brasil.gov.barra'
@@ -40,5 +37,5 @@ class HiddenProfiles(object):
             'brasil.gov.barra:uninstall',
             'brasil.gov.barra.upgrades.v1002:default',
             'brasil.gov.barra.upgrades.v1010:default',
-            'brasil.gov.barra.upgrades.v1013:default'
+            'brasil.gov.barra.upgrades.v1013:default',
         ]

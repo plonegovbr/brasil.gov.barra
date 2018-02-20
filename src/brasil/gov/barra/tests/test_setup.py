@@ -56,9 +56,7 @@ class TestUpgrade(BaseTestCase):
     def test_profile_version(self):
         # Testamos a versao do profile
         self.assertEqual(
-            self.st.getLastVersionForProfile(self.profile),
-            (u'1013',)
-        )
+            self.st.getLastVersionForProfile(self.profile), (u'1013',))
 
     def _executa_atualizacao(self, source, dest):
         upgradeSteps = listUpgradeSteps(self.st,
@@ -82,7 +80,7 @@ class TestUpgrade(BaseTestCase):
             css_id,
             enabled=1,
             cookable=False,
-            cacheable=False
+            cacheable=False,
         )
         self._executa_atualizacao('1000', '1002')
         self.assertNotIn(
@@ -91,7 +89,7 @@ class TestUpgrade(BaseTestCase):
     def test_to1002_from1010(self):
         self._executa_atualizacao('1002', '1010')
         controlpanel = api.portal.get_tool('portal_controlpanel')
-        with api.env.adopt_roles(['Site Administrator', ]):
+        with api.env.adopt_roles(['Site Administrator']):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado

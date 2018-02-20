@@ -29,13 +29,13 @@ class ControlPanelTest(unittest.TestCase):
         """Acesso a view nao pode ser feito por usuario anonimo"""
         controlpanel = api.portal.get_tool('portal_controlpanel')
         # Ao acessar a view como site administrator conseguimos acesso
-        with api.env.adopt_roles(['Site Administrator', ]):
+        with api.env.adopt_roles(['Site Administrator']):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado
             self.assertTrue('barra-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
-        with api.env.adopt_roles(['Anonymous', ]):
+        with api.env.adopt_roles(['Anonymous']):
             # Listamos todas as acoes do painel de controle
             installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
             self.assertFalse('barra-config' in installed)
