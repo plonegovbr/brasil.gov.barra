@@ -16,7 +16,7 @@ def unregister_old_css(context):
         '++resource++brasil.gov.barra/azul.css',
         '++resource++brasil.gov.barra/verde.css',
         '++resource++brasil.gov.barra/cinza.css',
-        '++resource++brasil.gov.barra/preto.css'
+        '++resource++brasil.gov.barra/preto.css',
     ]
     css_tool = api.portal.get_tool('portal_css')
     for css in CSS_TO_REMOVE:
