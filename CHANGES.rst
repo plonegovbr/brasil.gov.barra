@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.2.3 (unreleased)
+1.2.3 (2018-02-20)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza código da barra local.
