@@ -68,7 +68,8 @@ class TestUpgrade(BaseTestCase):
             source = (source, )
         step = [step for step in upgradeSteps[0]
                 if (step['dest'] == (dest,)) and (step['source'] == source)][0]
-        step.get('step').doStep(self.st)
+        # XXX: https://github.com/PyCQA/pylint/issues/2130
+        step.get('step').doStep(self.st)  # pylint: disable=comprehension-escape
 
     def test_to1000_from0(self):
         self._executa_atualizacao('0.0', '1000')
