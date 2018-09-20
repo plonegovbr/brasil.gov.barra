@@ -4,7 +4,8 @@ Changelog
 1.2.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza código da barra local.
+  [hvelarde]
 
 
 1.2.3 (2018-02-20)
