@@ -21,10 +21,6 @@ class HiddenProducts(object):
 
     def getNonInstallableProducts(self):
         return [
-            'brasil.gov.barra.upgrades.v1000',
-            'brasil.gov.barra.upgrades.v1002',
-            'brasil.gov.barra.upgrades.v1010',
-            'brasil.gov.barra.upgrades.v1013',
         ]
 
 
@@ -35,7 +31,4 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         return [
             'brasil.gov.barra:uninstall',
-            'brasil.gov.barra.upgrades.v1002:default',
-            'brasil.gov.barra.upgrades.v1010:default',
-            'brasil.gov.barra.upgrades.v1013:default',
         ]

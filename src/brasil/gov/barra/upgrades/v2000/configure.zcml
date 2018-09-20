@@ -4,8 +4,8 @@
     i18n_domain="brasil.gov.barra">
 
   <genericsetup:upgradeSteps
-      source="1013"
-      destination="1014"
+      source="*"
+      destination="2000"
       profile="brasil.gov.barra:default">
 
     <genericsetup:upgradeStep
