@@ -4,4 +4,5 @@ Changelog
 2.0b1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove suporte para o Plone 4.2.
+  [hvelarde]
