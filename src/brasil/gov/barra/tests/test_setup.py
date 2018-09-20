@@ -7,7 +7,6 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.browserlayer.utils import registered_layers
-from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest
 
@@ -47,63 +46,10 @@ class TestInstall(BaseTestCase):
         self.assertIsNotNone(sheet)
         self.assertFalse(sheet.getProperty('local'))
 
-
-class TestUpgrade(BaseTestCase):
-    """ensure product upgrades work"""
-
-    profile = 'brasil.gov.barra:default'
-
     def test_profile_version(self):
-        # Testamos a versao do profile
+        profile = 'brasil.gov.barra:default'
         self.assertEqual(
-            self.st.getLastVersionForProfile(self.profile), (u'1014',))
-
-    def _executa_atualizacao(self, source, dest):
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        source)
-        if source == '0.0':
-            source = ('0', '0')
-        else:
-            source = (source, )
-        step = [step for step in upgradeSteps[0]
-                if (step['dest'] == (dest,)) and (step['source'] == source)][0]
-        # XXX: https://github.com/PyCQA/pylint/issues/2130
-        step.get('step').doStep(self.st)  # pylint: disable=comprehension-escape
-
-    def test_to1000_from0(self):
-        self._executa_atualizacao('0.0', '1000')
-
-    def test_to1002_from1000(self):
-        css_id = '++resource++brasil.gov.barra/preto.css'
-        css_tool = api.portal.get_tool('portal_css')
-        css_tool.registerResource(
-            css_id,
-            enabled=1,
-            cookable=False,
-            cacheable=False,
-        )
-        self._executa_atualizacao('1000', '1002')
-        self.assertNotIn(
-            css_id, css_tool.getResourceIds())
-
-    def test_to1002_from1010(self):
-        self._executa_atualizacao('1002', '1010')
-        controlpanel = api.portal.get_tool('portal_controlpanel')
-        with api.env.adopt_roles(['Site Administrator']):
-            # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
-            # Validamos que o painel de controle da barra esteja instalado
-            self.assertIn('barra-config', installed)
-
-    def test_to1013_from1012(self):
-        self._executa_atualizacao('1012', '1013')
-        portal_css = self.portal.portal_css
-        css_barra = '++resource++brasil.gov.barra/main.css'
-        self.assertNotIn(
-            css_barra, portal_css.getResourceIds(),
-            '{0} installed'.format(css_barra),
-        )
+            self.st.getLastVersionForProfile(profile), (u'2000',))
 
 
 class TestUninstall(BaseTestCase):

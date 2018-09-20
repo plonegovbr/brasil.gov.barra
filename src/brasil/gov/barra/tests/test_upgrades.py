@@ -34,36 +34,13 @@ class UpgradeTestCaseBase(unittest.TestCase):
         """Return the number of steps in the upgrade."""
         self.setup.setLastVersionForProfile(self.profile_id, self.from_version)
         upgrades = self.setup.listUpgrades(self.profile_id)
-        assert len(upgrades) > 0
         return len(upgrades[0])
 
 
-class To1012TestCase(UpgradeTestCaseBase):
+class To2000TestCase(UpgradeTestCaseBase):
 
     def setUp(self):
-        UpgradeTestCaseBase.setUp(self, u'1011', u'1012')
-
-    def test_registrations(self):
-        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
-        self.assertGreaterEqual(version, self.to_version)
-        self.assertEqual(self.total_steps, 1)
-
-
-class To1013TestCase(UpgradeTestCaseBase):
-
-    def setUp(self):
-        UpgradeTestCaseBase.setUp(self, u'1012', u'1013')
-
-    def test_registrations(self):
-        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
-        self.assertGreaterEqual(version, self.to_version)
-        self.assertEqual(self.total_steps, 1)
-
-
-class To1014TestCase(UpgradeTestCaseBase):
-
-    def setUp(self):
-        UpgradeTestCaseBase.setUp(self, u'1013', u'1014')
+        UpgradeTestCaseBase.setUp(self, u'*', u'2000')
 
     def test_registrations(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
