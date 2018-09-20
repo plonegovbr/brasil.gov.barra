@@ -1,41 +1,27 @@
 # -*- coding: utf-8 -*-
-try:
-    # Python 3
-    from urllib.request import Request, urlopen
-except ImportError:
-    # Python 2
-    from urllib2 import Request, urlopen
-
 from brasil.gov.barra.browser.barra import BarraViewletJs
-from brasil.gov.barra.config import BARRA_JS_DEFAULT_LANGUAGE
-from brasil.gov.barra.config import BARRA_JS_FILE
 from brasil.gov.barra.config import BARRA_JS_STATIC_FILE_LOCATION
-from brasil.gov.barra.config import BARRA_JS_URL
 from brasil.gov.barra.testing import INTEGRATION_TESTING
-from filecmp import cmp
 from plone import api
-from time import time
-from zope.component import getMultiAdapter
 
+import os
 import unittest
 
 
-BARRA_EXTERNA_HTML = u'<script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>'
-BARRA_LOCAL_HTML = u'<script defer="defer" src="++resource++brasil.gov.barra/barra.js" type="text/javascript"></script>'
+BARRA_JS_URL = 'https://barra.brasil.gov.br/barra_2.0.js'
+BARRA_JS_FILE = 'barra.js'
+BARRA_JS_STATIC_FILE_LOCATION = os.path.join(
+    BARRA_JS_STATIC_FILE_LOCATION, BARRA_JS_FILE)
+BARRA_JS_DEFAULT_LANGUAGE = 'pt-BR'
+
+BARRA_EXTERNA_HTML = u'<script defer src="//barra.brasil.gov.br/barra_2.0.js"></script>'
+BARRA_LOCAL_HTML = u'<script defer src="++resource++brasil.gov.barra/barra.js"></script>'
 
 
 class HelperViewTest(unittest.TestCase):
     """ Caso de teste da Browser View BarraHelper"""
-    layer = INTEGRATION_TESTING
 
-    def language_lowercase(self):
-        """
-        @return: Two-letter string lowercase, the active language code
-        """
-        context = self.layer['portal']
-        portal_state = getMultiAdapter((context, context.REQUEST), name=u'plone_portal_state')
-        current_language = portal_state.language()
-        return current_language.lower()
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer['portal']
@@ -102,21 +88,20 @@ class HelperViewTest(unittest.TestCase):
         Se não for, avisa no teste e já indica o que tem de ser feito para
         corrigir.
         """
-        prevent_cache_random_string = str(time()).split('.')[0]
-        url = '{0}?v={1}'.format(BARRA_JS_URL + '.' + self.language_lowercase(), prevent_cache_random_string)
-        barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
-        request = Request(
-            url, headers={'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE})
+        from filecmp import cmp
+        import requests
 
-        barra_js = urlopen(request)
+        barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
+        headers = {
+            'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE,
+            'Cache-Control': 'no-cache',
+        }
+        r = requests.get(BARRA_JS_URL, headers=headers)
 
         with open(barra_js_tmp_location, 'wb') as output:
-            output.write(barra_js.read())
+            output.write(r.text.encode('utf-8'))
 
         iguais = cmp(barra_js_tmp_location, BARRA_JS_STATIC_FILE_LOCATION)
 
-        # Caso esse teste falhe, rode o comando
-        # wget --header="Accept-Language: BARRA_JS_DEFAULT_LANGUAGE" http://barra.brasil.gov.br/barra.js?v=$RANDOM && mv barra.js\?v=* barra.js
-        # em seu terminal para pegar a última versão da barra para poder fazer
-        # o teste passar. BARRA_JS_DEFAULT_LANGUAGE vem do config.py.
-        self.assertTrue(iguais)
+        msg = 'O código da barra está desatualizado; rode o buildout para atualizar'
+        self.assertTrue(iguais, msg)

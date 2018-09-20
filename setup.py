@@ -51,7 +51,8 @@ setup(name='brasil.gov.barra',
           ],
           'test': [
               'interlude',
-              'plone.app.testing'
+              'plone.app.testing',
+              'requests',
           ]},
       entry_points="""
       [z3c.autoinclude.plugin]
