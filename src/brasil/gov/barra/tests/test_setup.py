@@ -56,7 +56,7 @@ class TestUpgrade(BaseTestCase):
     def test_profile_version(self):
         # Testamos a versao do profile
         self.assertEqual(
-            self.st.getLastVersionForProfile(self.profile), (u'1013',))
+            self.st.getLastVersionForProfile(self.profile), (u'1014',))
 
     def _executa_atualizacao(self, source, dest):
         upgradeSteps = listUpgradeSteps(self.st,
