@@ -1,17 +1,13 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="brasil.gov.barra">
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
   <genericsetup:upgradeSteps
       source="*"
       destination="2000"
       profile="brasil.gov.barra:default">
 
-    <genericsetup:upgradeStep
-        title="Cook JavaScripts resources"
-        handler="..cook_javascript_resources"
-        />
+    <!-- XXX: this upgrade does nothing but bumping the profile version -->
 
   </genericsetup:upgradeSteps>
 

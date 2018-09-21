@@ -39,5 +39,5 @@ class to2000TestCase(UpgradeBaseTestCase):
         self.assertEqual(version, self.from_)
 
     def test_registered_steps(self):
-        steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 1)
+        steps = len(self.setup.listUpgrades(self.profile_id))
+        self.assertEqual(steps, 0)
