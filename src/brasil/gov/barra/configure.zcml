@@ -24,14 +24,4 @@
         directory="static"
         />
 
-    <!-- Oculta products -->
-    <utility
-        factory=".config.HiddenProducts"
-        name="brasil.gov.barra" />
-
-    <!-- Oculta profile -->
-    <utility
-        factory=".config.HiddenProfiles"
-        name="brasil.gov.barra" />
-
 </configure>

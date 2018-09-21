@@ -1,6 +1,7 @@
+<?xml version="1.0"?>
 <object name="portal_properties">
   <object name="brasil_gov" meta_type="Plone Property Sheet">
-      <property name="title" type="string" purge="False">Configurações de sites governamentais</property>
-      <property name="local" type="boolean">False</property>
+    <property name="title" type="string" purge="False">Configurações de sites governamentais</property>
+    <property name="local" type="boolean">False</property>
   </object>
 </object>

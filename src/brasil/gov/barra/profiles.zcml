@@ -2,7 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:gs="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="brasil.gov.vcge">
+    i18n_domain="brasil.gov.barra">
 
     <gs:registerProfile
          name="default"
@@ -21,5 +21,15 @@
          provides="Products.GenericSetup.interfaces.EXTENSION"
          i18n:attributes="title; description"
          />
+
+  <utility
+      factory=".setuphandlers.HiddenProducts"
+      name="brasil.gov.barra"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="brasil.gov.barra"
+      />
 
 </configure>
