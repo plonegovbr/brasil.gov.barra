@@ -13,19 +13,21 @@ PROJECTNAME = 'brasil.gov.barra'
 
 
 @implementer(qi_interfaces.INonInstallable)
-class HiddenProducts(object):
-    """Oculta produtos do QuickInstaller"""
+class HiddenProducts(object):  # pragma: no cover
 
-    def getNonInstallableProducts(self):
+    @staticmethod
+    def getNonInstallableProducts():
+        """Hide in the add-ons configlet."""
         return [
         ]
 
 
 @implementer(plone_interfaces.INonInstallable)
-class HiddenProfiles(object):
-    """Oculta profiles da tela inicial de criacao do site"""
+class HiddenProfiles(object):  # pragma: no cover
 
-    def getNonInstallableProfiles(self):
+    @staticmethod
+    def getNonInstallableProfiles():
+        """Hide at site creation."""
         return [
             'brasil.gov.barra:uninstall',
         ]
