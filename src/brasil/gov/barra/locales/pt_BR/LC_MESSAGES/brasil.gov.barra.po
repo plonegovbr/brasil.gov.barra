@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: brasil.gov.barra\n"
-"POT-Creation-Date: 2013-02-27 16:48+0000\n"
+"POT-Creation-Date: 2018-09-21 15:08+0000\n"
 "PO-Revision-Date: 2012-09-18 23:00+0000\n"
 "Last-Translator: PloneGov.Br <gov@plone.org.br>\n"
 "Language-Team: PloneGov.Br <gov@plone.org.br>\n"
@@ -14,25 +14,27 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: brasil.gov.barra\n"
 
-#: ../controlpanel/barra.py:86
-#: ../profiles/default/controlpanel.xml
+#: brasil/gov/barra/profiles/default/controlpanel.xml
+msgid ".gov.br: Barra de identidade"
+msgstr ""
+
+#: brasil/gov/barra/controlpanel/barra.py:58
 msgid "Brasil.gov.br: Barra de identidade"
 msgstr "Brasil.gov.br: Barra de identidade"
 
-#: ../controlpanel/barra.py:90
+#: brasil/gov/barra/controlpanel/barra.py:62
 msgid "Configuração funcional e visual"
 msgstr "Configuração funcional e visual"
 
-#: ../controlpanel/barra.py:88
+#: brasil/gov/barra/controlpanel/barra.py:60
 msgid "Configurações do comportamento da barra de identidade"
 msgstr "Configurações do comportamento da barra de identidade"
 
-#: ../controlpanel/barra.py:33
+#: brasil/gov/barra/controlpanel/barra.py:20
 msgid "Usar barra local"
 msgstr "Usar barra local"
 
 #. Default: "Devemos servir esta barra a partir deste site ou utilizar a versão disponível em barra.brasil.gov.br?"
-#: ../controlpanel/barra.py:34
+#: brasil/gov/barra/controlpanel/barra.py:21
 msgid "help_barra_local"
 msgstr "Devemos servir esta barra a partir deste site ou utilizar a versão disponível em barra.brasil.gov.br?"
-
