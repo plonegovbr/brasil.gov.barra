@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0b1 (unreleased)
+2.0b1 (2018-09-21)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza o código da barra à v3.0.4.
