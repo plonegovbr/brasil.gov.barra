@@ -4,20 +4,19 @@ from brasil.gov.barra.testing import INTEGRATION_TESTING
 import unittest
 
 
-class UpgradeTestCaseBase(unittest.TestCase):
+class UpgradeBaseTestCase(unittest.TestCase):
 
     layer = INTEGRATION_TESTING
+    profile_id = u'brasil.gov.barra:default'
 
-    def setUp(self, from_version, to_version):
+    def setUp(self):
         self.portal = self.layer['portal']
         self.setup = self.portal['portal_setup']
-        self.profile_id = u'brasil.gov.barra:default'
-        self.from_version = from_version
-        self.to_version = to_version
+        self.setup.setLastVersionForProfile(self.profile_id, self.from_)
 
     def get_upgrade_step(self, title):
-        """Get the named upgrade step."""
-        self.setup.setLastVersionForProfile(self.profile_id, self.from_version)
+        """Return the upgrade step that matches the title specified."""
+        self.setup.setLastVersionForProfile(self.profile_id, self.from_)
         upgrades = self.setup.listUpgrades(self.profile_id)
         steps = [s for s in upgrades[0] if s['title'] == title]
         return steps[0] if steps else None
@@ -29,20 +28,16 @@ class UpgradeTestCaseBase(unittest.TestCase):
         request.form['upgrades'] = [step['id']]
         self.setup.manage_doUpgrades(request=request)
 
-    @property
-    def total_steps(self):
-        """Return the number of steps in the upgrade."""
-        self.setup.setLastVersionForProfile(self.profile_id, self.from_version)
-        upgrades = self.setup.listUpgrades(self.profile_id)
-        return len(upgrades[0])
 
+class to2000TestCase(UpgradeBaseTestCase):
 
-class To2000TestCase(UpgradeTestCaseBase):
+    from_ = '*'
+    to_ = '2000'
 
-    def setUp(self):
-        UpgradeTestCaseBase.setUp(self, u'*', u'2000')
-
-    def test_registrations(self):
+    def test_profile_version(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
-        self.assertGreaterEqual(version, self.to_version)
-        self.assertEqual(self.total_steps, 1)
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 1)
