@@ -91,7 +91,7 @@ class HelperViewTest(unittest.TestCase):
         from filecmp import cmp
         import requests
 
-        barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)
+        barra_js_tmp_location = '/tmp/{0}'.format(BARRA_JS_FILE)  # nosec
         headers = {
             'Accept-Language': BARRA_JS_DEFAULT_LANGUAGE,
             'Cache-Control': 'no-cache',
