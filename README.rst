@@ -1,6 +1,6 @@
-**************************************
+****************************
 .gov.br: Barra de Identidade
-**************************************
+****************************
 
 .. contents:: Conteúdo
    :depth: 2
@@ -8,55 +8,59 @@
 Introdução
 -----------
 
-Este pacote provê a Barra de Identidade do Governo Federal para uso em
-sites Plone do Governo da República Federativa do Brasil.
+Este pacote provê a Barra de Identidade do Governo Federal para uso em sites Plone do Governo da República Federativa do Brasil.
 
-Para saber mais acesse `Identidade Visual do Governo Federal na
-Internet <http://epwg.governoeletronico.gov.br/barra/>`_.
+Para saber mais acesse `Identidade Visual do Governo Federal na Internet <http://epwg.governoeletronico.gov.br/barra/>`_.
 
 Instalação
 ------------
 
-Para habilitar a instalação deste produto em um ambiente que utilize o
-buildout:
+Para habilitar a instalação deste produto em um ambiente que utilize o buildout:
 
-1. Editar o arquivo buildout.cfg (ou outro arquivo de configuração) e
-   adicionar o pacote ``brasil.gov.barra`` à lista de eggs da instalação::
+1. Editar o arquivo buildout.cfg (ou outro arquivo de configuração) e adicionar o pacote ``brasil.gov.barra`` à lista de eggs da instalação:
 
-        [buildout]
-        ...
-        eggs =
-            brasil.gov.barra
+.. code-block:: cfg
 
-2. Após alterar o arquivo de configuração é necessário executar
-   ''bin/buildout'', que atualizará sua instalação.
+    [buildout]
+    ...
+    eggs =
+        brasil.gov.barra
+
+2. Após alterar o arquivo de configuração é necessário executar ''bin/buildout'', que atualizará sua instalação.
 
 3. Reinicie o Plone
 
-4. Acesse o painel de controle e instale o produto
-**Brasil.gov.br: Barra de identidade visual do governo**.
+4. Acesse o painel de controle e instale o produto **Brasil.gov.br: Barra de identidade visual do governo**.
 
-Captura de tela
-------------------
+Captura de telas
+----------------
 
-Exemplo de uso deste pacote em um site Plone 4.3 com tema padrão:
+.. figure:: https://raw.githubusercontent.com/plonegovbr/brasil.gov.barra/master/docs/bar.png
+    :align: center
+    :height: 480px
+    :width: 1024px
 
-.. image:: https://github.com/plonegovbr/brasil.gov.barra/raw/master/screenshot.png
+    A barra de identidade instalada num Plone site padrão.
 
+.. figure:: https://raw.githubusercontent.com/plonegovbr/brasil.gov.barra/master/docs/bar-opened.png
+    :align: center
+    :height: 480px
+    :width: 1024px
 
-Link para o painel de controle:
+    A barra de identidade aberta.
 
-.. image:: https://github.com/plonegovbr/brasil.gov.barra/raw/master/screenshot-controle1.png
+.. figure:: https://raw.githubusercontent.com/plonegovbr/brasil.gov.barra/master/docs/configlet.png
+    :align: center
+    :height: 480px
+    :width: 1024px
 
-Opções de configuração da barra:
-
-.. image:: https://github.com/plonegovbr/brasil.gov.barra/raw/master/screenshot-controle2.png
+    O configlet da barra de identidade no painel de controle.
 
 Estado deste pacote
 ---------------------
 
-O **brasil.gov.barra** tem testes automatizados e, a cada alteração em seu
-código os testes são executados pelo serviço Travis.
+O **brasil.gov.barra** tem testes automatizados e,
+a cada alteração em seu código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes, cobertura dos testes e downloads pode ser visto na imagem a seguir:
 
@@ -68,6 +72,15 @@ O estado atual dos testes, cobertura dos testes e downloads pode ser visto na im
 
 .. image:: https://img.shields.io/coveralls/plonegovbr/brasil.gov.barra/master.svg
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.barra
+
+Atualização de 1.x a 2.x
+------------------------
+
+.. Warning::
+    Só atualize para a versão 2.x do complemento depois de atualizar à versão mais recente da branch 1.x.
+
+As atualizações da versão 1.x à 2.x só são suportadas das versões mais recentes de cada branch.
+Antes de atualizar confira que você está efetivamente utilizando a última versão da branch 1.x e que não existem upgrade steps pendentes de serem aplicados.
 
 Rodando o buildout de uma tag antiga do pacote
 ----------------------------------------------
@@ -91,5 +104,5 @@ Exemplo: você clonou o repositório do brasil.gov.portal na sua máquina, e deu
         https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
         https://raw.githubusercontent.com/plone/plone.app.robotframework/master/versions.cfg
         https://raw.githubusercontent.com/plonegovbr/portalpadrao.release/master/1.0.5/versions.cfg
-        
+
 Para saber qual arquivo de versões é compatível, no caso do brasil.gov.portal, é simples pois é a mesma versão (no máximo um bug fix, por exemplo, brasil.gov.portal é 1.1.3 e o arquivo de versão é 1.1.3.1). Para os demais pacotes, recomendamos comparar a data da tag do pacote e a data nos changelog entre uma versão e outra para adivinhar a versão compatível.
