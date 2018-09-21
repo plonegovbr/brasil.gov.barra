@@ -12,8 +12,7 @@ class ControlPanelTest(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
-        # Como nao eh um teste funcional, este objeto
-        # REQUEST precisa ser anotado com o browser layer
+        self.controlpanel = self.portal['portal_controlpanel']
 
     def test_controlpanel_view(self):
         """Validamos se o control panel esta acessivel"""
@@ -27,17 +26,16 @@ class ControlPanelTest(unittest.TestCase):
 
     def test_controlpanel_configlet(self):
         """Acesso a view nao pode ser feito por usuario anonimo"""
-        controlpanel = api.portal.get_tool('portal_controlpanel')
         # Ao acessar a view como site administrator conseguimos acesso
         with api.env.adopt_roles(['Site Administrator']):
             # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            installed = [a['id'] for a in self.controlpanel.enumConfiglets(group='Products')]
             # Validamos que o painel de controle da barra esteja instalado
             self.assertTrue('barra-config' in installed)
         # Ao acessar a view como anonimo, a excecao e levantada
         with api.env.adopt_roles(['Anonymous']):
             # Listamos todas as acoes do painel de controle
-            installed = [a['id'] for a in controlpanel.enumConfiglets(group='Products')]
+            installed = [a['id'] for a in self.controlpanel.enumConfiglets(group='Products')]
             self.assertFalse('barra-config' in installed)
 
     def test_controlpanel_view_protected(self):
@@ -47,15 +45,22 @@ class ControlPanelTest(unittest.TestCase):
         # Deslogamos do portal
         logout()
         # Ao acessar a view como anonimo, a excecao e levantada
-        self.assertRaises(Unauthorized, self.portal.restrictedTraverse,
-                          '@@brasil.gov.barra-config')
+        with self.assertRaises(Unauthorized):
+            self.portal.restrictedTraverse('@@brasil.gov.barra-config')
 
     def test_configlet_install(self):
         """Validamos se o control panel foi registrado"""
-        # Obtemos a ferramenta de painel de controle
-        controlpanel = api.portal.get_tool('portal_controlpanel')
         # Listamos todas as acoes do painel de controle
-        installed = [a.getAction(self)['id']
-                     for a in controlpanel.listActions()]
+        actions = [a.id for a in self.controlpanel.listActions()]
         # Validamos que o painel de controle da barra esteja instalado
-        self.assertTrue('barra-config' in installed)
+        self.assertIn('barra-config', actions)
+
+    def test_controlpanel_removed_on_uninstall(self):
+        from brasil.gov.barra.config import PROJECTNAME
+        qi = self.portal['portal_quickinstaller']
+
+        with api.env.adopt_roles(['Manager']):
+            qi.uninstallProducts(products=[PROJECTNAME])
+
+        actions = [a.id for a in self.controlpanel.listActions()]
+        self.assertNotIn('barra-config', actions)

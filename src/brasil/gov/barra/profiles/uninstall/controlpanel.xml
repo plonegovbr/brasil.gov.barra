@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel">
+  <configlet
+      remove="true"
+      title=".gov.br: Barra de identidade"
+      action_id="barra-config"
+      appId="brasil.gov.barra"
+      category="Products"
+      />
+</object>
