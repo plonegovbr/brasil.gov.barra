@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0b2 (unreleased)
+3.0.5 (2018-10-04)
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona upgrade step dummy para atualizar a versão do profile.
