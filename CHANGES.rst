@@ -4,6 +4,9 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona upgrade step dummy para atualizar a versão do profile.
+  [hvelarde]
+
 - Atualiza o código da barra à v3.0.5.
   [hvelarde]
 
