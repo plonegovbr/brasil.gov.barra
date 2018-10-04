@@ -80,6 +80,10 @@ class HelperViewTest(unittest.TestCase):
         self.assertIn(BARRA_LOCAL_HTML, self.barra_viewlet_js.render())
         self.assertNotIn(BARRA_EXTERNA_HTML, self.barra_viewlet_js.render())
 
+    @staticmethod
+    def get_version(code):
+        return code[code.find('@version'):code.find(' @source')]
+
     def test_js_external_mesma_versao_static(self):
         """
         Baixa a última versão da barra diretamente do servidor do ministério
@@ -97,11 +101,15 @@ class HelperViewTest(unittest.TestCase):
             'Cache-Control': 'no-cache',
         }
         r = requests.get(BARRA_JS_URL, headers=headers)
+        code = r.text.encode('utf-8')
 
         with open(barra_js_tmp_location, 'wb') as output:
-            output.write(r.text.encode('utf-8'))
+            output.write(code)
 
         iguais = cmp(barra_js_tmp_location, BARRA_JS_STATIC_FILE_LOCATION)
 
-        msg = 'O código da barra está desatualizado; rode o buildout para atualizar'
-        self.assertTrue(iguais, msg)
+        msg = (
+            'O código da barra foi atualizado ({0}); '
+            'rode o buildout para atualizar a cópia local'
+        )
+        self.assertTrue(iguais, msg.format(self.get_version(code)))
