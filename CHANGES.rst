@@ -4,7 +4,8 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza o código da barra à v3.0.5.
+  [hvelarde]
 
 
 2.0b1 (2018-09-21)
