@@ -4,7 +4,8 @@ Changelog
 3.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza o código da barra à v3.0.6.
+  [hvelarde]
 
 
 3.0.5 (2018-10-04)
