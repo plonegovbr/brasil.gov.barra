@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-3.0.6 (unreleased)
+3.0.6 (2018-11-22)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza o código da barra à v3.0.6.
