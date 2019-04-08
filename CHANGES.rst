@@ -4,7 +4,8 @@ Changelog
 1.2.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza código da barra local.
+  [idgserpro]
 
 
 1.2.4 (2018-09-20)
