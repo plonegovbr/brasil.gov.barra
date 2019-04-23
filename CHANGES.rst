@@ -1,7 +1,13 @@
 Changelog
 ---------
 
-1.2.5 (unreleased)
+1.2.6 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
+1.2.5 (2019-04-23)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza código da barra local.
