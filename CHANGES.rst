@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-3.0.7 (unreleased)
+3.0.7 (2019-07-10)
 ^^^^^^^^^^^^^^^^^^
 
 - Atualiza o código da barra à v3.0.8.
