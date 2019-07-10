@@ -4,7 +4,8 @@ Changelog
 3.0.7 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza o código da barra à v3.0.8.
+  [rodfersou]
 
 
 3.0.6 (2018-11-22)
