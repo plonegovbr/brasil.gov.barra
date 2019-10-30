@@ -1,10 +1,11 @@
 Changelog
 ---------
 
-3.0.8 (unreleased)
+3.0.11 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Atualiza código da barra local para 3.0.11.
+  [idgserpro]
 
 
 3.0.7 (2019-07-10)
