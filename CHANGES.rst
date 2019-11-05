@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-3.0.11 (unreleased)
+3.0.11 (2019-11-05)
 ^^^^^^^^^^^^^^^^^^^^
 
 - Atualiza código da barra local para 3.0.11.
