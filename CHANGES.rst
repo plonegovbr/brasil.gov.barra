@@ -2,7 +2,7 @@ Changelog
 ---------
 
 3.0.11 (unreleased)
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 - Atualiza código da barra local para 3.0.11.
   [idgserpro]
