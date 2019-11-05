@@ -21,7 +21,7 @@ script:
 - bin/pylint --py3k --disable=no-absolute-import src/brasil/gov/barra
 after_success:
 - pip install coverage
-- coverage run bin/test --layer=\!Robot
+- coverage run bin/test
 # Coveralls
 - pip install coveralls
 - coveralls
