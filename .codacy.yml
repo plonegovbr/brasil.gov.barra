@@ -1,4 +1,3 @@
 exclude_paths:
-- bootstrap.py
 - setup.py
 - src/brasil/gov/barra/static/barra.js
