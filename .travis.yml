@@ -1,6 +1,5 @@
 language: python
 python: 2.7
-sudo: false
 cache:
   directories:
   - $HOME/.pylint.d
@@ -8,13 +7,11 @@ cache:
   - parts/node
 matrix:
   fast_finish: true
-before_install:
-# FIXME: I have no idea how and why six==1.11.0 is being installed
-- pip uninstall -y six
 install:
-- python bootstrap.py
-- bin/buildout annotate
-- bin/buildout
+  - virtualenv .
+  - bin/pip install -r requirements.txt
+  - bin/buildout annotate
+  - bin/buildout
 script:
 - bin/code-analysis
 - bin/test

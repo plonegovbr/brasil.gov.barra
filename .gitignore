@@ -17,3 +17,6 @@ local.cfg
 parts/
 var/
 /dist/
+/local
+/share/
+/pip-selfcheck.json
